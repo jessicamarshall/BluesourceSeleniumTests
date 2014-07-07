@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regression]">
+  <test name="Add New Employee(failed)">
+    <classes>
+      <class name="com.orasi.bluesource.test.TestAddNewTitle">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="cleanUp"/>
+          <include name="testCreateNewTitle" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.orasi.bluesource.test.TestAddNewTitle -->
+    </classes>
+  </test> <!-- Add New Employee(failed) -->
+</suite> <!-- Failed suite [Regression] -->
