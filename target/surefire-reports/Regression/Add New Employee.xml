@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="Jesse" name="com.orasi.bluesource.core.Driver" tests="2" failures="0" timestamp="2 Jul 2014 15:04:52 GMT" time="29.342" errors="0">
-  <testcase name="login" time="2.662" classname="com.orasi.bluesource.test.TestAddNewEmployee"/>
-  <testcase name="testAddEmployee" time="22.622" classname="com.orasi.bluesource.test.TestAddNewEmployee"/>
-</testsuite>

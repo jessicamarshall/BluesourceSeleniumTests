@@ -1,9 +1,0 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Regression" >
-  <test name="Add New Employee">
-    <classes>
-      <class name="com.orasi.bluesource.test.TestAddNewEmployee">
-	  </class>   
-    </classes>
-  </test> 
-</suite> 
