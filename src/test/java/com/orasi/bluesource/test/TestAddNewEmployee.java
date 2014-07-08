@@ -4,11 +4,12 @@ import org.openqa.selenium.*;
 import org.junit.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
-
+import org.openqa.selenium.support.PageFactory;
 import com.orasi.bluesource.core.Driver;
 import com.orasi.bluesource.pageObject.AddNewEmployeePage;
 import com.orasi.bluesource.pageObject.EmployeesPage;
 import com.orasi.bluesource.pageObject.LoginPage;
+import com.orasi.bluesource.pageObject.TopNavigationBar;
 import com.orasi.bluesource.dataObject.TestAddNewEmployeeData;
 
 
@@ -19,31 +20,33 @@ public class TestAddNewEmployee extends Driver {
 	  @Test(dataProvider = "addEmpData", dataProviderClass = TestAddNewEmployeeData.class)
 	  public void testAddEmployee(TestAddNewEmployeeData testData) throws Exception {
 		  
+		  //EmployeesPage employeesPage = new EmployeesPage(driver);
+		  //AddNewEmployeePage addNewEmployeePage = new AddNewEmployeePage(driver);
+		  
 		  //Login
-		  LoginPage loginPage = new LoginPage(driver);
+		  //LoginPage loginPage = new LoginPage(driver);
+		  LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 		  loginPage.login(testData.getLoginUsername(), testData.getLoginPassword());
 
 		  //Verify user is logged in
-		  Assert.assertTrue(driver.findElement(By.linkText("Logout")).isDisplayed());
+		  TopNavigationBar topNavigationBar = PageFactory.initElements(driver, TopNavigationBar.class);
+		  Assert.assertTrue(topNavigationBar.isLoggedIn());
 		  Reporter.log("User was logged in successfully");
 		  
-		  //Instantiate the employee page and the add new employees page
-		  EmployeesPage employeesPage = new EmployeesPage(driver);
-		  AddNewEmployeePage addNewEmployeePage = new AddNewEmployeePage(driver);
-		  
 		  //click add
+		  EmployeesPage employeesPage = PageFactory.initElements(driver, EmployeesPage.class);
 		  employeesPage.clickAddNewEmployee();
 		  Reporter.log("Clicked add");
 		  
 		  //Fill out the new employee details and submit
+		  AddNewEmployeePage addNewEmployeePage = PageFactory.initElements(driver, AddNewEmployeePage.class);
 		  addNewEmployeePage.addEmployee(testData.getUsername(), testData.getFirstName(), testData.getLastName(), testData.getTitle(),
 				  						testData.getRole(), testData.getManager(), testData.getStatus(), testData.getLocation(), 
 				  						testData.getStartDate(), testData.getCellPhone(), testData.getOfficePhone(), testData.getEmail(),
-				  						testData.getDept());
-		
+				  						testData.getDept());		
 
 		  //verify success message
-		  assert driver.findElement(By.cssSelector(".alert-success.alert-dismissable")).getText().contains("Employee added successfully");  
+		  assert employeesPage.getSuccessMsgText().contains("Employee added successfully");
 		  Reporter.log("New employee was added successfully");
 		  
 		  //search for the employee and verify it was found
@@ -51,7 +54,7 @@ public class TestAddNewEmployee extends Driver {
 		  Reporter.log("New user was found in list of employees");
 		  
 		  //logout
-		  loginPage.logout();
+		  topNavigationBar.logout();
 	  }
   
 

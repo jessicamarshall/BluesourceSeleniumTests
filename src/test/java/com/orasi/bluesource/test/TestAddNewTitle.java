@@ -58,8 +58,8 @@ public class TestAddNewTitle extends Driver{
 		Assert.assertTrue(driver.findElement(By.cssSelector(".alert-success.alert-dismissable")).isDisplayed());
 		Reporter.log("New title was deleted successfully<br>");
 		
-	  //logout
-	  loginPage.logout();
+		//logout
+		topNavigationBar.logout();
 		
 	}
 	
