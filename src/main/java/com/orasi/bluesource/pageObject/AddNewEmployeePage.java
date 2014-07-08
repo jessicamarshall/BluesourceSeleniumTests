@@ -50,7 +50,8 @@ public class AddNewEmployeePage {
 		  driver.findElement(By.id("employee_cell_phone")).sendKeys(cellPhone);
 		  driver.findElement(By.id("employee_office_phone")).sendKeys(officePhone);
 		  driver.findElement(By.id("employee_email")).sendKeys(email);
-		  driver.findElement(By.id("employee_department_id")).sendKeys(dept);
+		  select = new Select(driver.findElement(By.id("employee_department_id")));
+		  select.selectByVisibleText(dept);
 		  
 		  //submit
 		  driver.findElement(By.name("commit")).click();

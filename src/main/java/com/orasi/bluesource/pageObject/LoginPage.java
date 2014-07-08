@@ -17,7 +17,7 @@ public class LoginPage {
 		  //Login
 		  //driver.findElement(By.id("employee_username")).sendKeys(testData.getloginUsername());
 		  //driver.findElement(By.id("employee_password")).sendKeys(testData.getloginPassword());
-		  driver.findElement(By.id("employee_username")).sendKeys(username);
+		  //driver.findElement(By.id("employee_username")).sendKeys(username);
 		  driver.findElement(By.id("employee_password")).sendKeys(password);
 		  driver.findElement(By.name("commit")).click();  
 	  }

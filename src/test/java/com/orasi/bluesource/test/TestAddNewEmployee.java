@@ -27,28 +27,28 @@ public class TestAddNewEmployee extends Driver {
 		  Assert.assertTrue(driver.findElement(By.linkText("Logout")).isDisplayed());
 		  Reporter.log("User was logged in successfully");
 		  
-//		  //Instantiate the employee page and the add new employees page
-//		  EmployeesPage employeesPage = new EmployeesPage(driver);
-//		  AddNewEmployeePage addNewEmployeePage = new AddNewEmployeePage(driver);
-//		  
-//		  //click add
-//		  employeesPage.clickAddNewEmployee();
-//		  Reporter.log("Clicked add");
-//		  
-//		  //Fill out the new employee details and submit
-//		  addNewEmployeePage.addEmployee(testData.getUsername(), testData.getFirstName(), testData.getLastName(), testData.getTitle(),
-//				  						testData.getRole(), testData.getManager(), testData.getStatus(), testData.getLocation(), 
-//				  						testData.getStartDate(), testData.getCellPhone(), testData.getOfficePhone(), testData.getEmail(),
-//				  						testData.getDept());
-//		
-//
-//		  //verify success message
-//		  assert driver.findElement(By.cssSelector(".alert-success.alert-dismissable")).getText().contains("Employee added successfully");  
-//		  Reporter.log("New employee was added successfully");
-//		  
-//		  //search for the employee and verify it was found
-//		  Assert.assertTrue(employeesPage.searchTableByFirstAndLastName(testData.getFirstName(), testData.getLastName() ));
-//		  Reporter.log("New user was found in list of employees");
+		  //Instantiate the employee page and the add new employees page
+		  EmployeesPage employeesPage = new EmployeesPage(driver);
+		  AddNewEmployeePage addNewEmployeePage = new AddNewEmployeePage(driver);
+		  
+		  //click add
+		  employeesPage.clickAddNewEmployee();
+		  Reporter.log("Clicked add");
+		  
+		  //Fill out the new employee details and submit
+		  addNewEmployeePage.addEmployee(testData.getUsername(), testData.getFirstName(), testData.getLastName(), testData.getTitle(),
+				  						testData.getRole(), testData.getManager(), testData.getStatus(), testData.getLocation(), 
+				  						testData.getStartDate(), testData.getCellPhone(), testData.getOfficePhone(), testData.getEmail(),
+				  						testData.getDept());
+		
+
+		  //verify success message
+		  assert driver.findElement(By.cssSelector(".alert-success.alert-dismissable")).getText().contains("Employee added successfully");  
+		  Reporter.log("New employee was added successfully");
+		  
+		  //search for the employee and verify it was found
+		  Assert.assertTrue(employeesPage.searchTableByFirstAndLastName(testData.getFirstName(), testData.getLastName() ));
+		  Reporter.log("New user was found in list of employees");
 		  
 		  //logout
 		  loginPage.logout();
