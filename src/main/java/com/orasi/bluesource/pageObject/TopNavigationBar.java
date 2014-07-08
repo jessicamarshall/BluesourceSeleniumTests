@@ -9,6 +9,8 @@ public class TopNavigationBar {
 	public TopNavigationBar(WebDriver driver){
 		this.driver = driver;
 	}
+	
+	//methods
 	public void clickAdminLink(){
 		driver.findElement(By.xpath("//a[text() = 'Admin ']")).click();
 	}

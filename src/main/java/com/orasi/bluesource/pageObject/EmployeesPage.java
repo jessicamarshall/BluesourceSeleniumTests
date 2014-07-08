@@ -19,6 +19,7 @@ public class EmployeesPage {
 		this.driver = driver;
 	}
 	
+	
 	//Click the add button
 	public void clickAddNewEmployee(){
 		  //Click add

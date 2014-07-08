@@ -4,39 +4,21 @@
     <line>
       <![CDATA[User was logged in successfully]]>
     </line>
-    <line>
-      <![CDATA[Clicked add]]>
-    </line>
-    <line>
-      <![CDATA[New employee was added successfully]]>
-    </line>
-    <line>
-      <![CDATA[First name was found in table of employees]]>
-    </line>
-    <line>
-      <![CDATA[Last name was found in table of employees]]>
-    </line>
-    <line>
-      <![CDATA[The employee was found in the table of employees]]>
-    </line>
-    <line>
-      <![CDATA[New user was found in list of employees]]>
-    </line>
   </reporter-output>
-  <suite name="Regression" duration-ms="21891" started-at="2014-07-07T15:59:02Z" finished-at="2014-07-07T15:59:24Z">
+  <suite name="Regression" duration-ms="7161" started-at="2014-07-08T14:25:25Z" finished-at="2014-07-08T14:25:32Z">
     <groups>
     </groups>
-    <test name="Add New Employee" duration-ms="21891" started-at="2014-07-07T15:59:02Z" finished-at="2014-07-07T15:59:24Z">
+    <test name="Add New Employee" duration-ms="7161" started-at="2014-07-08T14:25:25Z" finished-at="2014-07-08T14:25:32Z">
       <class name="com.orasi.bluesource.test.TestAddNewEmployee">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.orasi.bluesource.test.TestAddNewEmployee@19dfb72a]" name="launchBrowser" is-config="true" duration-ms="6700" started-at="2014-07-07T11:59:02Z" finished-at="2014-07-07T11:59:09Z">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.orasi.bluesource.test.TestAddNewEmployee@6aaa5eb0]" name="launchBrowser" is-config="true" duration-ms="2896" started-at="2014-07-08T10:25:25Z" finished-at="2014-07-08T10:25:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="testAddEmployee(com.orasi.bluesource.dataObject.TestAddNewEmployeeData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewEmployee@19dfb72a]" name="testAddEmployee" duration-ms="13735" started-at="2014-07-07T11:59:09Z" data-provider="addEmpData" finished-at="2014-07-07T11:59:23Z">
+        <test-method status="PASS" signature="testAddEmployee(com.orasi.bluesource.dataObject.TestAddNewEmployeeData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewEmployee@6aaa5eb0]" name="testAddEmployee" duration-ms="1734" started-at="2014-07-08T10:25:28Z" data-provider="addEmpData" finished-at="2014-07-08T10:25:30Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.orasi.bluesource.dataObject.TestAddNewEmployeeData@1b7cc17c]]>
+                <![CDATA[com.orasi.bluesource.dataObject.TestAddNewEmployeeData@6771beb3]]>
               </value>
             </param>
           </params>
@@ -44,27 +26,9 @@
             <line>
               <![CDATA[User was logged in successfully]]>
             </line>
-            <line>
-              <![CDATA[Clicked add]]>
-            </line>
-            <line>
-              <![CDATA[New employee was added successfully]]>
-            </line>
-            <line>
-              <![CDATA[First name was found in table of employees]]>
-            </line>
-            <line>
-              <![CDATA[Last name was found in table of employees]]>
-            </line>
-            <line>
-              <![CDATA[The employee was found in the table of employees]]>
-            </line>
-            <line>
-              <![CDATA[New user was found in list of employees]]>
-            </line>
           </reporter-output>
         </test-method> <!-- testAddEmployee -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.orasi.bluesource.test.TestAddNewEmployee@19dfb72a]" name="cleanUp" is-config="true" duration-ms="1422" started-at="2014-07-07T11:59:23Z" finished-at="2014-07-07T11:59:24Z">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.orasi.bluesource.test.TestAddNewEmployee@6aaa5eb0]" name="cleanUp" is-config="true" duration-ms="2493" started-at="2014-07-08T10:25:30Z" finished-at="2014-07-08T10:25:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->

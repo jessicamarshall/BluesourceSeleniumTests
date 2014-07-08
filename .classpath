@@ -61,5 +61,20 @@
 	<classpathentry kind="lib" path="C:/Selenium/selenium-2.42.2/libs/xalan-2.7.1.jar"/>
 	<classpathentry kind="lib" path="C:/Selenium/selenium-2.42.2/libs/xercesImpl-2.11.0.jar"/>
 	<classpathentry kind="lib" path="C:/Selenium/selenium-2.42.2/libs/xml-apis-1.4.01.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/poi-3.10-FINAL/poi-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/poi-3.10-FINAL/poi-examples-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/poi-3.10-FINAL/poi-excelant-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/poi-3.10-FINAL/poi-ooxml-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/poi-3.10-FINAL/poi-ooxml-schemas-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/poi-3.10-FINAL/poi-scratchpad-3.10-FINAL-20140208.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/poi-3.10-FINAL/ooxml-lib/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/poi-3.10-FINAL/ooxml-lib/stax-api-1.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/poi-3.10-FINAL/ooxml-lib/xmlbeans-2.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/poi-3.10-FINAL/lib/commons-codec-1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/poi-3.10-FINAL/lib/commons-logging-1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/poi-3.10-FINAL/lib/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/poi-3.10-FINAL/lib/log4j-1.2.13.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/opencsv-2.3/deploy/opencsv-2.3.jar"/>
+	<classpathentry kind="lib" path="C:/Eclipse/eclipse/DownloadedJars/opencsv-2.3/lib/junit-4.7.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -1,11 +1,21 @@
 package com.orasi.bluesource.dataObject;
 
+import java.io.FileReader;
+import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
+
+
+
 
 import org.testng.annotations.DataProvider;
 
+import com.google.common.io.Resources;
+
+import au.com.bytecode.opencsv.CSVReader;
 
 public class TestAddNewEmployeeData  {
 	
@@ -128,37 +138,49 @@ public class TestAddNewEmployeeData  {
     }
     
     //data providers
+    //Get data from a csv file
 	@DataProvider(name = "addEmpData")
-	public static Object[][] createEmployeeData(){
+	public static Object[][] createEmployeeData() throws Exception{
+		
+
+		CSVReader csvReader = new CSVReader(new FileReader("C:\\Maven\\BluesourceSeleniumTests\\resources\\TestAddNewEmployee.csv"));
+		List<String[]>dataList = csvReader.readAll();
+		Object[][] data = new Object[dataList.size()-1][1];
+		List<TestAddNewEmployeeData> addEmpList = new ArrayList<TestAddNewEmployeeData>();
+		
 		//to get the current date and format it
 		Date date = new Date();
 		SimpleDateFormat ft = new SimpleDateFormat ("MM-dd-yyyy");
-		  
-		//Create & set the data
-		TestAddNewEmployeeData testData1 = new TestAddNewEmployeeData();
 		
-		testData1.setLoginUsername("company.admin");
-		testData1.setLoginPassword("test123");
-	    testData1.setFirstName("Firstname" + createRandomNum());
-	    testData1.setLastName("Lastname" + createRandomNum());
-		testData1.setUsername(testData1.getFirstName() + testData1.getLastName());
-		testData1.setTitle("Consultant");
-		testData1.setRole("Base");
-		testData1.setManager("Adam Thomas");
-		testData1.setStatus("Permanent");
-		testData1.setLocation("Greensboro");
-		testData1.setStartDate(ft.format(date));
-		testData1.setCellPhone("336-999-1234");
-		testData1.setOfficePhone("336-789-7894");
-		testData1.setEmail("test" + createRandomNum() + "@test.com");
-		testData1.setDept("Services");
+		for(String[] strArray:dataList) {
+			TestAddNewEmployeeData testData = new TestAddNewEmployeeData();
+			testData.setLoginUsername(strArray[0].trim());
+			testData.setLoginPassword(strArray[1].trim());
+		    testData.setFirstName("Firstname" + createRandomNum());
+		    testData.setLastName("Lastname" + createRandomNum());
+			testData.setUsername(testData.getFirstName() + testData.getLastName());
+			testData.setTitle(strArray[5].trim());
+			testData.setRole(strArray[6].trim());
+			testData.setManager(strArray[7].trim());
+			testData.setStatus(strArray[8].trim());
+			testData.setLocation(strArray[9].trim());
+			testData.setStartDate(ft.format(date));
+			testData.setCellPhone(strArray[11].trim());
+			testData.setOfficePhone(strArray[12].trim());
+			testData.setEmail("test" + createRandomNum() + "@test.com");
+			testData.setDept(strArray[14].trim());
+			addEmpList.add(testData);
+		}
+
+
+		for(int i=1; i<addEmpList.size(); i++){
+			for(int j=0; j<data[i-1].length; j++){
+				data[i-1][j]=addEmpList.get(i);
+			}
+		}
 		
-		return new Object[][]{
-				{	testData1
-				}
-			
-		};
-	
+		csvReader.close();
+		return data;
 	}
 
 }

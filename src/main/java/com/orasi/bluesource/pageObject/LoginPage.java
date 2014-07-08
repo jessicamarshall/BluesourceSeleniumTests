@@ -21,4 +21,8 @@ public class LoginPage {
 		  driver.findElement(By.id("employee_password")).sendKeys(password);
 		  driver.findElement(By.name("commit")).click();  
 	  }
+	  
+	  public void logout(){
+		  driver.findElement(By.linkText("Logout")).click();
+	  }
 }
