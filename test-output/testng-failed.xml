@@ -3,14 +3,14 @@
 <suite name="Failed suite [Regression]">
   <test name="Add New Employee(failed)">
     <classes>
-      <class name="com.orasi.bluesource.test.TestAddNewEmployee">
+      <class name="com.orasi.bluesource.test.TestAddNewTitle">
         <methods>
-          <include name="testAddEmployee" invocation-numbers="0"/>
           <include name="launchBrowser"/>
           <include name="cleanUp"/>
           <include name="catchExceptions"/>
+          <include name="testCreateNewTitle" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.orasi.bluesource.test.TestAddNewEmployee -->
+      </class> <!-- com.orasi.bluesource.test.TestAddNewTitle -->
     </classes>
   </test> <!-- Add New Employee(failed) -->
 </suite> <!-- Failed suite [Regression] -->

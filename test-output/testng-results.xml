@@ -5,26 +5,35 @@
       <![CDATA[User was logged in successfully]]>
     </line>
     <line>
-      <![CDATA[Clicked add]]>
+      <![CDATA[Navigated to the listing titles page<br>]]>
     </line>
     <line>
-      <![CDATA[New employee was added successfully]]>
+      <![CDATA[Navigated to the new title page<br>]]>
+    </line>
+    <line>
+      <![CDATA[New Title was created: NewTitle849<br>]]>
+    </line>
+    <line>
+      <![CDATA[New title was found in table of titles<br>]]>
+    </line>
+    <line>
+      <![CDATA[New title was deleted successfully<br>]]>
     </line>
   </reporter-output>
-  <suite name="Regression" duration-ms="10595" started-at="2014-07-08T21:17:27Z" finished-at="2014-07-08T21:17:37Z">
+  <suite name="Regression" duration-ms="10924" started-at="2014-07-15T21:03:06Z" finished-at="2014-07-15T21:03:17Z">
     <groups>
     </groups>
-    <test name="Add New Employee" duration-ms="10595" started-at="2014-07-08T21:17:27Z" finished-at="2014-07-08T21:17:37Z">
-      <class name="com.orasi.bluesource.test.TestAddNewEmployee">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.orasi.bluesource.test.TestAddNewEmployee@3cda1055]" name="launchBrowser" is-config="true" duration-ms="3059" started-at="2014-07-08T17:17:27Z" finished-at="2014-07-08T17:17:30Z">
+    <test name="Add New Employee" duration-ms="10924" started-at="2014-07-15T21:03:06Z" finished-at="2014-07-15T21:03:17Z">
+      <class name="com.orasi.bluesource.test.TestAddNewTitle">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@6b2fad11]" name="launchBrowser" is-config="true" duration-ms="4976" started-at="2014-07-15T17:03:06Z" finished-at="2014-07-15T17:03:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="testAddEmployee(com.orasi.bluesource.dataObject.TestAddNewEmployeeData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewEmployee@3cda1055]" name="testAddEmployee" duration-ms="5004" started-at="2014-07-08T17:17:30Z" data-provider="addEmpData" finished-at="2014-07-08T17:17:35Z">
+        <test-method status="PASS" signature="testCreateNewTitle(com.orasi.bluesource.dataObject.TestAddNewTitleData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@6b2fad11]" name="testCreateNewTitle" duration-ms="4613" started-at="2014-07-15T17:03:11Z" data-provider="createNewTitleData" finished-at="2014-07-15T17:03:15Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.orasi.bluesource.dataObject.TestAddNewEmployeeData@6b2ea799]]>
+                <![CDATA[com.orasi.bluesource.dataObject.TestAddNewTitleData@4d5d943d]]>
               </value>
             </param>
           </params>
@@ -33,29 +42,38 @@
               <![CDATA[User was logged in successfully]]>
             </line>
             <line>
-              <![CDATA[Clicked add]]>
+              <![CDATA[Navigated to the listing titles page<br>]]>
             </line>
             <line>
-              <![CDATA[New employee was added successfully]]>
+              <![CDATA[Navigated to the new title page<br>]]>
+            </line>
+            <line>
+              <![CDATA[New Title was created: NewTitle849<br>]]>
+            </line>
+            <line>
+              <![CDATA[New title was found in table of titles<br>]]>
+            </line>
+            <line>
+              <![CDATA[New title was deleted successfully<br>]]>
             </line>
           </reporter-output>
-        </test-method> <!-- testAddEmployee -->
-        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestAddNewEmployee@3cda1055]" name="catchExceptions" is-config="true" duration-ms="1" started-at="2014-07-08T17:17:35Z" finished-at="2014-07-08T17:17:35Z">
+        </test-method> <!-- testCreateNewTitle -->
+        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@6b2fad11]" name="catchExceptions" is-config="true" duration-ms="0" started-at="2014-07-15T17:03:15Z" finished-at="2014-07-15T17:03:15Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testAddEmployee status=SUCCESS method=TestAddNewEmployee.testAddEmployee(com.orasi.bluesource.dataObject.TestAddNewEmployeeData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewEmployee@3cda1055] output=User was logged in successfully]]]>
+                <![CDATA[[TestResult name=testCreateNewTitle status=SUCCESS method=TestAddNewTitle.testCreateNewTitle(com.orasi.bluesource.dataObject.TestAddNewTitleData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@6b2fad11] output=User was logged in successfully]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- catchExceptions -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.orasi.bluesource.test.TestAddNewEmployee@3cda1055]" name="cleanUp" is-config="true" duration-ms="2500" started-at="2014-07-08T17:17:35Z" finished-at="2014-07-08T17:17:37Z">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@6b2fad11]" name="cleanUp" is-config="true" duration-ms="1280" started-at="2014-07-15T17:03:15Z" finished-at="2014-07-15T17:03:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.orasi.bluesource.test.TestAddNewEmployee -->
+      </class> <!-- com.orasi.bluesource.test.TestAddNewTitle -->
     </test> <!-- Add New Employee -->
   </suite> <!-- Regression -->
 </testng-results>

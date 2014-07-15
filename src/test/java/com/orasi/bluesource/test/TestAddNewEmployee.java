@@ -1,6 +1,5 @@
 package com.orasi.bluesource.test;
 
-import org.openqa.selenium.*;
 import org.junit.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -20,11 +19,8 @@ public class TestAddNewEmployee extends Driver {
 	  @Test(dataProvider = "addEmpData", dataProviderClass = TestAddNewEmployeeData.class)
 	  public void testAddEmployee(TestAddNewEmployeeData testData) throws Exception {
 		  
-		  //EmployeesPage employeesPage = new EmployeesPage(driver);
-		  //AddNewEmployeePage addNewEmployeePage = new AddNewEmployeePage(driver);
-		  
+
 		  //Login
-		  //LoginPage loginPage = new LoginPage(driver);
 		  LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 		  loginPage.login(testData.getLoginUsername(), testData.getLoginPassword());
 

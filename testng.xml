@@ -2,7 +2,7 @@
 <suite name="Regression" >
   <test name="Add New Employee">
     <classes>
-      <class name="com.orasi.bluesource.test.TestAddNewEmployee">
+      <class name="com.orasi.bluesource.test.TestAddNewTitle">
 	  </class>   
     </classes>
   </test> 

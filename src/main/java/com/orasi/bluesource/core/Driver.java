@@ -2,25 +2,25 @@ package com.orasi.bluesource.core;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.*;
 import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-
-
-
-
 
 
 public class Driver extends CommonUtils{
@@ -30,18 +30,38 @@ public class Driver extends CommonUtils{
 	public static StringBuffer verificationErrors = new StringBuffer();
 	
 	  @BeforeTest
-	  public void launchBrowser() {
+	  public void launchBrowser() throws MalformedURLException {
+		  	
+		  	String browser = "Chrome";
+	
+			
+			if (browser == "Chrome"){
+				//URL seleniumRemoteChrome = new URL("http", "gsod-jphelgar", 5556, "/wd/hub");
+				//DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+				//driver = new RemoteWebDriver(seleniumRemoteChrome, capabilities);
+				
+				File file = new File("C:/Selenium/chromedriver.exe");
+				System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
+				driver = new ChromeDriver();
+				
+				//capabilities.setJavascriptEnabled(true);
+			} else if (browser == "Firefox") {
+				URL seleniumRemoteFirefox = new URL("http", "10.238.242.73", 5555, "/wd/hub");
+				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
+				driver = new RemoteWebDriver(seleniumRemoteFirefox, capabilities);
+				capabilities.setJavascriptEnabled(true);
+			} else if (browser == "IE"){
+				URL seleniumRemoteIE = new URL ("http", "10.238.242.73", 5555, "/wd/hub");
+				DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
+				driver = new RemoteWebDriver(seleniumRemoteIE, capabilities);
+				capabilities.setJavascriptEnabled(true);
+			}
+			
+			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 		  
-			File file = new File("C:/Selenium/chromedriver.exe");
-			System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
-			driver = new ChromeDriver();
-		
 			//launch the browser
 			driver.get("http://bluesourcestaging.herokuapp.com/login");
 			
-		
-			//verify browser is opened
-			Assert.assertEquals("Login", driver.findElement(By.cssSelector("h1")).getText());
 	  }
 
 	  @AfterMethod(alwaysRun=true)

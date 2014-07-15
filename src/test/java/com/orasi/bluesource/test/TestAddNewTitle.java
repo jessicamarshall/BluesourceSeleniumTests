@@ -1,5 +1,5 @@
 package com.orasi.bluesource.test;
-import org.openqa.selenium.*;
+import org.openqa.selenium.support.PageFactory;
 import org.junit.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -10,6 +10,8 @@ import com.orasi.bluesource.pageObject.LoginPage;
 import com.orasi.bluesource.pageObject.NewTitlePage;
 import com.orasi.bluesource.pageObject.TopNavigationBar;
 import com.orasi.bluesource.dataObject.TestAddNewTitleData;
+
+
 public class TestAddNewTitle extends Driver{
 	
 
@@ -17,37 +19,37 @@ public class TestAddNewTitle extends Driver{
 	@Test(dataProvider = "createNewTitleData", dataProviderClass = TestAddNewTitleData.class)
 	public void testCreateNewTitle(TestAddNewTitleData testData){
 		
-		//Login to the application
-		LoginPage loginPage = new LoginPage(driver);
+		//Login
+		LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 		loginPage.login(testData.getloginUsername(), testData.getloginPassword());
 	  
 		//Verify user is logged in
-		Assert.assertTrue(driver.findElement(By.linkText("Logout")).isDisplayed());
-		Reporter.log("User was logged in successfully<br>");
+		TopNavigationBar topNavigationBar = PageFactory.initElements(driver, TopNavigationBar.class);
+		Assert.assertTrue(topNavigationBar.isLoggedIn());
+		Reporter.log("User was logged in successfully");
 		
-		//Instantiate the top navigation bar and navigate to the title page
-		TopNavigationBar topNavigationBar = new TopNavigationBar(driver);
+		//Navigate to the title page
 		topNavigationBar.clickAdminLink();
 		topNavigationBar.clickTitlesLink();
 		
 		//Verify navigated to the title page
-		Assert.assertTrue(driver.findElement(By.xpath("//h1[text() = 'Listing titles']")).isDisplayed());
+		ListingTitlesPage listingTitlesPage = PageFactory.initElements(driver, ListingTitlesPage.class);
+		Assert.assertTrue(listingTitlesPage.isTitleHeaderDisplayed());
 		Reporter.log("Navigated to the listing titles page<br>");
 
-		//Instantiate the title page and click new title
-		ListingTitlesPage listingTitlesPage = new ListingTitlesPage(driver);
+		//Click new title
 		listingTitlesPage.ClickNewTitle();
+		Reporter.log("Navigated to the new title page<br>");
 		
 		//Instantiate the New titles page and create a new title
-		Reporter.log("Navigated to the new title page<br>");
-		NewTitlePage newTitlePage = new NewTitlePage(driver);
+		NewTitlePage newTitlePage = PageFactory.initElements(driver, NewTitlePage.class);
 		newTitlePage.CreateNewTitle(testData.getNewTitle());
 		
 		//Verify the title was created
-		Assert.assertTrue(driver.findElement(By.cssSelector(".alert-success.alert-dismissable")).isDisplayed());
-		Reporter.log("New Title was created: " + testData.getNewTitle());
+		Assert.assertTrue(listingTitlesPage.isSuccessMsgDisplayed());
+		Reporter.log("New Title was created: " + testData.getNewTitle() + "<br>");
 		
-		//Verify the title is displayed on the title page
+		//Verify the title is displayed on the title results table
 		Assert.assertTrue(listingTitlesPage.SearchTableByTitle(testData.getNewTitle()));
 		Reporter.log("New title was found in table of titles<br>");
 		
@@ -55,7 +57,8 @@ public class TestAddNewTitle extends Driver{
 		listingTitlesPage.DeleteTitle(testData.getNewTitle());
 		
 		//Verify the title is deleted
-		Assert.assertTrue(driver.findElement(By.cssSelector(".alert-success.alert-dismissable")).isDisplayed());
+		ListingTitlesPage refreshedPage = PageFactory.initElements(driver, ListingTitlesPage.class);
+		Assert.assertTrue(refreshedPage.isSuccessMsgDisplayed());
 		Reporter.log("New title was deleted successfully<br>");
 		
 		//logout

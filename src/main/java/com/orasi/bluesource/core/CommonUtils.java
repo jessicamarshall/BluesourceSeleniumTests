@@ -18,18 +18,23 @@ public class CommonUtils {
 	      SimpleDateFormat formater = new SimpleDateFormat("dd_MM_yyyy_hh_mm_ss");
 	      String failFileName = null;
           File imageFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-          try {
+          //try {
         	  failFileName = "failure_screenshots/"+methodName+"_"+formater.format(calendar.getTime())+".png";
         	  System.out.println(failFileName);
         	  File failFile = new File(failFileName);
-        	  FileUtils.moveFile(imageFile, failFile);
+        	  try {
+				FileUtils.moveFile(imageFile, failFile);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
         	  Reporter.log("Failure");
         	  Reporter.log("<a href='" + failFile.getAbsolutePath() + "'>screenshot</a>");
         	  return failFile;
-          } catch (IOException e1) {
-              e1.printStackTrace();
-          }
-		return null;
+         // } catch (IOException e1) {
+           //   e1.printStackTrace();
+         // }
+		//return null;
 
 	}
 }

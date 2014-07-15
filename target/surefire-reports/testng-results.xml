@@ -1,54 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
     <line>
       <![CDATA[User was logged in successfully]]>
     </line>
     <line>
-      <![CDATA[Clicked add]]>
+      <![CDATA[Navigated to the listing titles page<br>]]>
     </line>
     <line>
-      <![CDATA[New employee was added successfully]]>
+      <![CDATA[Navigated to the new title page<br>]]>
     </line>
     <line>
-      <![CDATA[First name was found in table of employees]]>
+      <![CDATA[New Title was created: NewTitle607<br>]]>
     </line>
     <line>
-      <![CDATA[Last name was found in table of employees]]>
+      <![CDATA[New title was found in table of titles<br>]]>
     </line>
     <line>
-      <![CDATA[The employee was found in the table of employees]]>
-    </line>
-    <line>
-      <![CDATA[New user was found in list of employees]]>
+      <![CDATA[New title was deleted successfully<br>]]>
     </line>
   </reporter-output>
-  <suite name="Regression" duration-ms="29342" started-at="2014-07-02T11:04:23Z" finished-at="2014-07-02T11:04:52Z">
+  <suite name="Regression" duration-ms="11118" started-at="2014-07-11T14:25:16Z" finished-at="2014-07-11T14:25:27Z">
     <groups>
     </groups>
-    <test name="Add New Employee" duration-ms="29342" started-at="2014-07-02T11:04:23Z" finished-at="2014-07-02T11:04:52Z">
-      <class name="com.orasi.bluesource.test.TestAddNewEmployee">
-        <test-method status="PASS" signature="launchBrowser()" name="launchBrowser" is-config="true" duration-ms="2709" started-at="2014-07-02T11:04:23Z" finished-at="2014-07-02T11:04:26Z">
+    <test name="Add New Employee" duration-ms="11118" started-at="2014-07-11T14:25:16Z" finished-at="2014-07-11T14:25:27Z">
+      <class name="com.orasi.bluesource.test.TestAddNewTitle">
+        <test-method status="PASS" signature="launchBrowser()" name="launchBrowser" is-config="true" duration-ms="4297" started-at="2014-07-11T14:25:16Z" finished-at="2014-07-11T14:25:20Z">
         </test-method>
-        <test-method status="PASS" signature="login(com.orasi.bluesource.dataObject.TestData)" name="login" duration-ms="2662" started-at="2014-07-02T11:04:26Z" finished-at="2014-07-02T11:04:28Z">
+        <test-method status="PASS" signature="testCreateNewTitle(com.orasi.bluesource.dataObject.TestAddNewTitleData)" name="testCreateNewTitle" duration-ms="4323" started-at="2014-07-11T14:25:20Z" finished-at="2014-07-11T14:25:24Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.orasi.bluesource.dataObject.TestData@2d3379b4]]>
+                <![CDATA[com.orasi.bluesource.dataObject.TestAddNewTitleData@1163238]]>
               </value>
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="testAddEmployee(com.orasi.bluesource.dataObject.TestData)" name="testAddEmployee" duration-ms="22622" started-at="2014-07-02T11:04:28Z" finished-at="2014-07-02T11:04:51Z">
+        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)" name="catchExceptions" is-config="true" duration-ms="1" started-at="2014-07-11T14:25:24Z" finished-at="2014-07-11T14:25:24Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.orasi.bluesource.dataObject.TestData@30c15d8b]]>
+                <![CDATA[[TestResult: testCreateNewTitle STATUS:SUCCESS METHOD:com.orasi.bluesource.test.TestAddNewTitle.testCreateNewTitle(com.orasi.bluesource.dataObject.TestAddNewTitleData)User was logged in successfully]]>
               </value>
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="cleanUp()" name="cleanUp" is-config="true" duration-ms="1325" started-at="2014-07-02T11:04:51Z" finished-at="2014-07-02T11:04:52Z">
+        <test-method status="PASS" signature="cleanUp()" name="cleanUp" is-config="true" duration-ms="2489" started-at="2014-07-11T14:25:24Z" finished-at="2014-07-11T14:25:27Z">
         </test-method>
       </class>
     </test>

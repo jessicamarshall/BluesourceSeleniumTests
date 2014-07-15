@@ -3,11 +3,11 @@
 <suite verbose="0" name="Failed suite [Regression]">
   <test name="Add New Employee(failed)" preserve-order="false">
     <classes>
-      <class name="com.orasi.bluesource.test.TestAddNewEmployee">
+      <class name="com.orasi.bluesource.test.TestAddNewTitle">
         <methods>
-          <include name="testAddEmployee"/>
-          <include name="login"/>
           <include name="launchBrowser"/>
+          <include name="cleanUp"/>
+          <include name="testCreateNewTitle"/>
         </methods>
       </class>
     </classes>

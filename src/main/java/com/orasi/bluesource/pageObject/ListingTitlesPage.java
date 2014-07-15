@@ -6,18 +6,43 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class ListingTitlesPage {
 	
-	private WebDriver driver;
+	WebDriver driver;
 	
+	//All the page elements
+	@FindBy(linkText = "New Title")
+	WebElement newTitleLink;
+	
+	@FindBy(xpath = "//h1[text() = 'Listing titles']")
+	WebElement titleHeader;
+
+	@FindBy(css = ".alert-success.alert-dismissable")
+	WebElement successMessage;
+	
+	//constructor
 	public ListingTitlesPage(WebDriver driver){
 		this.driver = driver;
 	}
 	
+	//Methods
 	public void ClickNewTitle(){
-		driver.findElement(By.linkText("New Title")).click();
+		newTitleLink.click();
+	}
+	
+	public boolean isTitleHeaderDisplayed(){
+		return titleHeader.isDisplayed();
+	}
+	
+	public boolean isSuccessMsgDisplayed() {
+		WebDriverWait wait = new WebDriverWait(driver, 5);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".alert-success.alert-dismissable")));
+		return successMessage.isDisplayed();
 	}
 	
 	public boolean SearchTableByTitle(String title){
@@ -41,7 +66,7 @@ public class ListingTitlesPage {
 			
 			//if it matches the title, then click on the trash element
 			if(element.getText().equals(title)){
-				
+		
 				//click on the trash element
 				element.findElement(By.cssSelector("a[data-method = 'delete']")).click();
 				
