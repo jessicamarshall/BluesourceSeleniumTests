@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="Jesse" name="com.orasi.bluesource.test.TestAddNewTitle" tests="1" failures="0" timestamp="17 Jul 2014 18:31:37 GMT" time="7.94" errors="0">
+  <testcase name="testCreateNewTitle" time="3.521" classname="com.orasi.bluesource.test.TestAddNewTitle"/>
+</testsuite>

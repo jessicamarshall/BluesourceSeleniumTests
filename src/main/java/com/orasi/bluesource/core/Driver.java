@@ -13,6 +13,8 @@ import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.firefox.*;
+import org.openqa.selenium.ie.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
@@ -20,6 +22,7 @@ import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
@@ -30,13 +33,14 @@ public class Driver extends CommonUtils{
 	public static StringBuffer verificationErrors = new StringBuffer();
 	
 	  @BeforeTest
-	  public void launchBrowser() throws MalformedURLException {
+	  @Parameters("browser")
+	  public void launchBrowser(String browser) throws MalformedURLException {
 		  	
-		  	String browser = "Chrome";
+		  	//String browser = "Chrome";
 	
 			
-			if (browser == "Chrome"){
-				//URL seleniumRemoteChrome = new URL("http", "gsod-jphelgar", 5556, "/wd/hub");
+			if (browser.equalsIgnoreCase("Chrome") ){
+				//URL seleniumRemoteChrome = new URL("http", "10.238.242.51", 5556, "/wd/hub");
 				//DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 				//driver = new RemoteWebDriver(seleniumRemoteChrome, capabilities);
 				
@@ -45,13 +49,21 @@ public class Driver extends CommonUtils{
 				driver = new ChromeDriver();
 				
 				//capabilities.setJavascriptEnabled(true);
-			} else if (browser == "Firefox") {
+			} else if (browser.equalsIgnoreCase("Firefox")) {
+				
+				//driver = new FirefoxDriver();
 				URL seleniumRemoteFirefox = new URL("http", "10.238.242.73", 5555, "/wd/hub");
 				DesiredCapabilities capabilities = DesiredCapabilities.firefox();
 				driver = new RemoteWebDriver(seleniumRemoteFirefox, capabilities);
 				capabilities.setJavascriptEnabled(true);
-			} else if (browser == "IE"){
-				URL seleniumRemoteIE = new URL ("http", "10.238.242.73", 5555, "/wd/hub");
+			} else if (browser.equalsIgnoreCase("IE")){
+				
+				//File file = new File("C:/Selenium/IEDriverServer.exe");
+				//System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+				//driver = new InternetExplorerDriver();
+				
+				
+				URL seleniumRemoteIE = new URL ("http", "192.168.62.128", 5557, "/wd/hub");
 				DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();
 				driver = new RemoteWebDriver(seleniumRemoteIE, capabilities);
 				capabilities.setJavascriptEnabled(true);
@@ -93,7 +105,7 @@ public class Driver extends CommonUtils{
 	  
 	  @AfterTest
 	  public void cleanUp() {
-		  driver.close();
+		  //driver.close();
 		  driver.quit();
 		  
 	  }

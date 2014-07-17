@@ -41,7 +41,8 @@ public class ListingTitlesPage {
 	
 	public boolean isSuccessMsgDisplayed() {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".alert-success.alert-dismissable")));
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".alert-success.alert-dismissable")));
+		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".alert-success.alert-dismissable")));
 		return successMessage.isDisplayed();
 	}
 	

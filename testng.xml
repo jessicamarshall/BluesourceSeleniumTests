@@ -1,6 +1,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Regression" >
-  <test name="Add New Employee">
+<suite name="Multiple Browsers" parallel="tests" thread-count="3">
+ 
+  <test name="Add New Title_Chrome">
+  	<parameter name="browser"  value="Chrome"/>
     <classes>
       <class name="com.orasi.bluesource.test.TestAddNewTitle">
 	  </class>   

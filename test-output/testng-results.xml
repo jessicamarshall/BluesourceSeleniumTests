@@ -11,7 +11,7 @@
       <![CDATA[Navigated to the new title page<br>]]>
     </line>
     <line>
-      <![CDATA[New Title was created: NewTitle849<br>]]>
+      <![CDATA[New Title was created: NewTitle834<br>]]>
     </line>
     <line>
       <![CDATA[New title was found in table of titles<br>]]>
@@ -20,20 +20,27 @@
       <![CDATA[New title was deleted successfully<br>]]>
     </line>
   </reporter-output>
-  <suite name="Regression" duration-ms="10924" started-at="2014-07-15T21:03:06Z" finished-at="2014-07-15T21:03:17Z">
+  <suite name="Multiple Browsers" duration-ms="9012" started-at="2014-07-17T17:51:28Z" finished-at="2014-07-17T17:51:37Z">
     <groups>
     </groups>
-    <test name="Add New Employee" duration-ms="10924" started-at="2014-07-15T21:03:06Z" finished-at="2014-07-15T21:03:17Z">
+    <test name="Add New Title_Chrome" duration-ms="9012" started-at="2014-07-17T17:51:28Z" finished-at="2014-07-17T17:51:37Z">
       <class name="com.orasi.bluesource.test.TestAddNewTitle">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@6b2fad11]" name="launchBrowser" is-config="true" duration-ms="4976" started-at="2014-07-15T17:03:06Z" finished-at="2014-07-15T17:03:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="testCreateNewTitle(com.orasi.bluesource.dataObject.TestAddNewTitleData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@6b2fad11]" name="testCreateNewTitle" duration-ms="4613" started-at="2014-07-15T17:03:11Z" data-provider="createNewTitleData" finished-at="2014-07-15T17:03:15Z">
+        <test-method status="PASS" signature="launchBrowser(java.lang.String)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@38082d64]" name="launchBrowser" is-config="true" duration-ms="4876" started-at="2014-07-17T13:51:28Z" finished-at="2014-07-17T13:51:33Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.orasi.bluesource.dataObject.TestAddNewTitleData@4d5d943d]]>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method status="PASS" signature="testCreateNewTitle(com.orasi.bluesource.dataObject.TestAddNewTitleData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@38082d64]" name="testCreateNewTitle" duration-ms="2894" started-at="2014-07-17T13:51:33Z" data-provider="createNewTitleData" finished-at="2014-07-17T13:51:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.orasi.bluesource.dataObject.TestAddNewTitleData@3df853e2]]>
               </value>
             </param>
           </params>
@@ -48,7 +55,7 @@
               <![CDATA[Navigated to the new title page<br>]]>
             </line>
             <line>
-              <![CDATA[New Title was created: NewTitle849<br>]]>
+              <![CDATA[New Title was created: NewTitle834<br>]]>
             </line>
             <line>
               <![CDATA[New title was found in table of titles<br>]]>
@@ -58,22 +65,22 @@
             </line>
           </reporter-output>
         </test-method> <!-- testCreateNewTitle -->
-        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@6b2fad11]" name="catchExceptions" is-config="true" duration-ms="0" started-at="2014-07-15T17:03:15Z" finished-at="2014-07-15T17:03:15Z">
+        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@38082d64]" name="catchExceptions" is-config="true" duration-ms="0" started-at="2014-07-17T13:51:36Z" finished-at="2014-07-17T13:51:36Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testCreateNewTitle status=SUCCESS method=TestAddNewTitle.testCreateNewTitle(com.orasi.bluesource.dataObject.TestAddNewTitleData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@6b2fad11] output=User was logged in successfully]]]>
+                <![CDATA[[TestResult name=testCreateNewTitle status=SUCCESS method=TestAddNewTitle.testCreateNewTitle(com.orasi.bluesource.dataObject.TestAddNewTitleData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@38082d64] output=User was logged in successfully]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- catchExceptions -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@6b2fad11]" name="cleanUp" is-config="true" duration-ms="1280" started-at="2014-07-15T17:03:15Z" finished-at="2014-07-15T17:03:17Z">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@38082d64]" name="cleanUp" is-config="true" duration-ms="1220" started-at="2014-07-17T13:51:36Z" finished-at="2014-07-17T13:51:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
       </class> <!-- com.orasi.bluesource.test.TestAddNewTitle -->
-    </test> <!-- Add New Employee -->
-  </suite> <!-- Regression -->
+    </test> <!-- Add New Title_Chrome -->
+  </suite> <!-- Multiple Browsers -->
 </testng-results>

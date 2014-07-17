@@ -11,7 +11,7 @@
       <![CDATA[Navigated to the new title page<br>]]>
     </line>
     <line>
-      <![CDATA[New Title was created: NewTitle607<br>]]>
+      <![CDATA[New Title was created: NewTitle605<br>]]>
     </line>
     <line>
       <![CDATA[New title was found in table of titles<br>]]>
@@ -20,23 +20,30 @@
       <![CDATA[New title was deleted successfully<br>]]>
     </line>
   </reporter-output>
-  <suite name="Regression" duration-ms="11118" started-at="2014-07-11T14:25:16Z" finished-at="2014-07-11T14:25:27Z">
+  <suite name="Multiple Browsers" duration-ms="7940" started-at="2014-07-17T14:31:29Z" finished-at="2014-07-17T14:31:37Z">
     <groups>
     </groups>
-    <test name="Add New Employee" duration-ms="11118" started-at="2014-07-11T14:25:16Z" finished-at="2014-07-11T14:25:27Z">
+    <test name="Add New Title_Chrome" duration-ms="7940" started-at="2014-07-17T14:31:29Z" finished-at="2014-07-17T14:31:37Z">
       <class name="com.orasi.bluesource.test.TestAddNewTitle">
-        <test-method status="PASS" signature="launchBrowser()" name="launchBrowser" is-config="true" duration-ms="4297" started-at="2014-07-11T14:25:16Z" finished-at="2014-07-11T14:25:20Z">
-        </test-method>
-        <test-method status="PASS" signature="testCreateNewTitle(com.orasi.bluesource.dataObject.TestAddNewTitleData)" name="testCreateNewTitle" duration-ms="4323" started-at="2014-07-11T14:25:20Z" finished-at="2014-07-11T14:25:24Z">
+        <test-method status="PASS" signature="launchBrowser(java.lang.String)" name="launchBrowser" is-config="true" duration-ms="3200" started-at="2014-07-17T14:31:29Z" finished-at="2014-07-17T14:31:33Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.orasi.bluesource.dataObject.TestAddNewTitleData@1163238]]>
+                <![CDATA[Chrome]]>
               </value>
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)" name="catchExceptions" is-config="true" duration-ms="1" started-at="2014-07-11T14:25:24Z" finished-at="2014-07-11T14:25:24Z">
+        <test-method status="PASS" signature="testCreateNewTitle(com.orasi.bluesource.dataObject.TestAddNewTitleData)" name="testCreateNewTitle" duration-ms="3521" started-at="2014-07-17T14:31:33Z" finished-at="2014-07-17T14:31:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.orasi.bluesource.dataObject.TestAddNewTitleData@6cc15ede]]>
+              </value>
+            </param>
+          </params>
+        </test-method>
+        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)" name="catchExceptions" is-config="true" duration-ms="1" started-at="2014-07-17T14:31:36Z" finished-at="2014-07-17T14:31:36Z">
           <params>
             <param index="0">
               <value>
@@ -45,7 +52,7 @@
             </param>
           </params>
         </test-method>
-        <test-method status="PASS" signature="cleanUp()" name="cleanUp" is-config="true" duration-ms="2489" started-at="2014-07-11T14:25:24Z" finished-at="2014-07-11T14:25:27Z">
+        <test-method status="PASS" signature="cleanUp()" name="cleanUp" is-config="true" duration-ms="1197" started-at="2014-07-17T14:31:36Z" finished-at="2014-07-17T14:31:37Z">
         </test-method>
       </class>
     </test>
