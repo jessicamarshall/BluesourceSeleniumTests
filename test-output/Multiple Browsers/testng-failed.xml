@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite thread-count="3" name="Failed suite [Multiple Browsers]" parallel="tests">
-  <parameter name="browser" value="IE"/>
-  <test name="Add New Title_IE(failed)" parallel="tests">
-    <parameter name="browser" value="IE"/>
+  <parameter name="browser" value="Chrome"/>
+  <test name="Add New Title_Chrome(failed)" parallel="tests">
+    <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="com.orasi.bluesource.test.TestAddNewTitle">
+      <class name="com.orasi.bluesource.test.TestAddNewDept">
         <methods>
           <include name="launchBrowser"/>
           <include name="cleanUp"/>
-          <include name="launchBrowser"/>
           <include name="catchExceptions"/>
-          <include name="catchExceptions"/>
-          <include name="testCreateNewTitle"/>
+          <include name="testCreateNewDept" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.orasi.bluesource.test.TestAddNewTitle -->
+      </class> <!-- com.orasi.bluesource.test.TestAddNewDept -->
     </classes>
-  </test> <!-- Add New Title_IE(failed) -->
+  </test> <!-- Add New Title_Chrome(failed) -->
 </suite> <!-- Failed suite [Multiple Browsers] -->

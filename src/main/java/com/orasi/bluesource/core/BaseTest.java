@@ -26,7 +26,7 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 
-public class Driver extends CommonUtils{
+public class BaseTest extends CommonUtils{
 	
 
 	public static WebDriver driver;

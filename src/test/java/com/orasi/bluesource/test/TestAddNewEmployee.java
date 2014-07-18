@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import org.openqa.selenium.support.PageFactory;
-import com.orasi.bluesource.core.Driver;
+import com.orasi.bluesource.core.BaseTest;
 import com.orasi.bluesource.pageObject.AddNewEmployeePage;
 import com.orasi.bluesource.pageObject.EmployeesPage;
 import com.orasi.bluesource.pageObject.LoginPage;
@@ -13,7 +13,7 @@ import com.orasi.bluesource.dataObject.TestAddNewEmployeeData;
 
 
 
-public class TestAddNewEmployee extends Driver {
+public class TestAddNewEmployee extends BaseTest {
 	
 	  //Add a new employee and verify a success message	
 	  @Test(dataProvider = "addEmpData", dataProviderClass = TestAddNewEmployeeData.class)

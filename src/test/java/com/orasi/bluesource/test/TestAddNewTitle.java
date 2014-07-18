@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import com.orasi.bluesource.core.Driver;
+import com.orasi.bluesource.core.BaseTest;
 import com.orasi.bluesource.pageObject.ListingTitlesPage;
 import com.orasi.bluesource.pageObject.LoginPage;
 import com.orasi.bluesource.pageObject.NewTitlePage;
@@ -12,7 +12,7 @@ import com.orasi.bluesource.pageObject.TopNavigationBar;
 import com.orasi.bluesource.dataObject.TestAddNewTitleData;
 
 
-public class TestAddNewTitle extends Driver{
+public class TestAddNewTitle extends BaseTest{
 	
 
 	//Create a new title

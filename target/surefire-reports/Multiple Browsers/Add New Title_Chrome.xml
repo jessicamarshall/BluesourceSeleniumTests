@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite hostname="Jesse" name="com.orasi.bluesource.test.TestAddNewTitle" tests="1" failures="0" timestamp="17 Jul 2014 18:31:37 GMT" time="7.94" errors="0">
-  <testcase name="testCreateNewTitle" time="3.521" classname="com.orasi.bluesource.test.TestAddNewTitle"/>
+<testsuite hostname="Jesse" name="com.orasi.bluesource.test.TestAddNewDept" tests="1" failures="1" timestamp="18 Jul 2014 16:04:29 GMT" time="7.524" errors="0">
+  <testcase name="testCreateNewDept" time="2.745" classname="com.orasi.bluesource.test.TestAddNewDept">
+    <failure type="java.lang.AssertionError">
+      <![CDATA[java.lang.AssertionError: 
+	at org.junit.Assert.fail(Assert.java:91)
+	at org.junit.Assert.assertTrue(Assert.java:43)
+	at org.junit.Assert.assertTrue(Assert.java:54)
+	at com.orasi.bluesource.test.TestAddNewDept.testCreateNewDept(TestAddNewDept.java:50)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+... Removed 17 stack frames]]>
+    </failure>
+  </testcase>
 </testsuite>

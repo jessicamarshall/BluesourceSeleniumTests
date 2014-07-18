@@ -4,7 +4,7 @@
   <test name="Add New Title_Chrome">
   	<parameter name="browser"  value="Chrome"/>
     <classes>
-      <class name="com.orasi.bluesource.test.TestAddNewTitle">
+      <class name="com.orasi.bluesource.test.TestAddNewDept">
 	  </class>   
     </classes>
   </test> 

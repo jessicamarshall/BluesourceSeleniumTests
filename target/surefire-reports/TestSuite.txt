@@ -1,4 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.449 sec - in TestSuite
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 8.092 sec <<< FAILURE! - in TestSuite
+testCreateNewDept(com.orasi.bluesource.test.TestAddNewDept)  Time elapsed: 2.748 sec  <<< FAILURE!
+java.lang.AssertionError: 
+	at org.junit.Assert.fail(Assert.java:91)
+	at org.junit.Assert.assertTrue(Assert.java:43)
+	at org.junit.Assert.assertTrue(Assert.java:54)
+	at com.orasi.bluesource.test.TestAddNewDept.testCreateNewDept(TestAddNewDept.java:50)
+
