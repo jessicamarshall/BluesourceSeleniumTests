@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="3" name="Failed suite [Multiple Browsers]" parallel="tests">
+<suite name="Failed suite [Regression]">
   <parameter name="browser" value="Chrome"/>
-  <test name="Add New Title_Chrome(failed)" parallel="tests">
+  <test name="Enter time off details for employee(failed)">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="com.orasi.bluesource.test.TestAddNewDept">
+      <class name="com.orasi.bluesource.test.TestEnterTimeOffDetails">
         <methods>
           <include name="launchBrowser"/>
           <include name="cleanUp"/>
+          <include name="testEnterTimeOffDetails" invocation-numbers="3"/>
           <include name="catchExceptions"/>
-          <include name="testCreateNewDept" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.orasi.bluesource.test.TestAddNewDept -->
+      </class> <!-- com.orasi.bluesource.test.TestEnterTimeOffDetails -->
     </classes>
-  </test> <!-- Add New Title_Chrome(failed) -->
-</suite> <!-- Failed suite [Multiple Browsers] -->
+  </test> <!-- Enter time off details for employee(failed) -->
+</suite> <!-- Failed suite [Regression] -->

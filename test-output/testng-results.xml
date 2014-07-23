@@ -1,28 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
     <line>
       <![CDATA[User was logged in successfully]]>
     </line>
     <line>
-      <![CDATA[Navigated to the department page]]>
+      <![CDATA[Selected the first employee]]>
     </line>
     <line>
-      <![CDATA[New Dept was created: NewDept751]]>
+      <![CDATA[Time off was entered]]>
     </line>
     <line>
-      <![CDATA[New dept was found in table of titles<br>]]>
+      <![CDATA[Time off was saved successfully]]>
     </line>
     <line>
-      <![CDATA[New dept was deleted successfully<br>]]>
+      <![CDATA[Time off requests were deleted successfully]]>
+    </line>
+    <line>
+      <![CDATA[User was logged in successfully]]>
+    </line>
+    <line>
+      <![CDATA[Selected the first employee]]>
+    </line>
+    <line>
+      <![CDATA[Time off was entered]]>
+    </line>
+    <line>
+      <![CDATA[Time off was saved successfully]]>
+    </line>
+    <line>
+      <![CDATA[Time off requests were deleted successfully]]>
+    </line>
+    <line>
+      <![CDATA[User was logged in successfully]]>
+    </line>
+    <line>
+      <![CDATA[Selected the first employee]]>
+    </line>
+    <line>
+      <![CDATA[Time off was entered]]>
+    </line>
+    <line>
+      <![CDATA[Time off was saved successfully]]>
+    </line>
+    <line>
+      <![CDATA[Time off requests were deleted successfully]]>
+    </line>
+    <line>
+      <![CDATA[User was logged in successfully]]>
+    </line>
+    <line>
+      <![CDATA[Selected the first employee]]>
+    </line>
+    <line>
+      <![CDATA[Time off was entered]]>
+    </line>
+    <line>
+      <![CDATA[Time off was saved successfully]]>
+    </line>
+    <line>
+      <![CDATA[Time off requests were deleted successfully]]>
     </line>
   </reporter-output>
-  <suite name="Multiple Browsers" duration-ms="35340" started-at="2014-07-18T16:31:16Z" finished-at="2014-07-18T16:31:51Z">
+  <suite name="Regression" duration-ms="38839" started-at="2014-07-23T21:20:37Z" finished-at="2014-07-23T21:21:16Z">
     <groups>
     </groups>
-    <test name="Add New Title_Chrome" duration-ms="35340" started-at="2014-07-18T16:31:16Z" finished-at="2014-07-18T16:31:51Z">
-      <class name="com.orasi.bluesource.test.TestAddNewDept">
-        <test-method status="PASS" signature="launchBrowser(java.lang.String)[pri:0, instance:com.orasi.bluesource.test.TestAddNewDept@6ce139a4]" name="launchBrowser" is-config="true" duration-ms="2996" started-at="2014-07-18T12:31:16Z" finished-at="2014-07-18T12:31:19Z">
+    <test name="Enter time off details for employee" duration-ms="38839" started-at="2014-07-23T21:20:37Z" finished-at="2014-07-23T21:21:16Z">
+      <class name="com.orasi.bluesource.test.TestEnterTimeOffDetails">
+        <test-method status="PASS" signature="launchBrowser(java.lang.String)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="launchBrowser" is-config="true" duration-ms="2974" started-at="2014-07-23T17:20:37Z" finished-at="2014-07-23T17:20:40Z">
           <params>
             <param index="0">
               <value>
@@ -33,11 +78,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="testCreateNewDept(com.orasi.bluesource.dataObject.TestAddNewDeptData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewDept@6ce139a4]" name="testCreateNewDept" duration-ms="31148" started-at="2014-07-18T12:31:19Z" data-provider="createNewDeptData" finished-at="2014-07-18T12:31:50Z">
+        <test-method status="PASS" signature="testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="testEnterTimeOffDetails" duration-ms="7390" started-at="2014-07-23T17:20:40Z" data-provider="createTimeOffData" finished-at="2014-07-23T17:20:47Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.orasi.bluesource.dataObject.TestAddNewDeptData@664e9f15]]>
+                <![CDATA[com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData@ff684e1]]>
               </value>
             </param>
           </params>
@@ -46,35 +91,146 @@
               <![CDATA[User was logged in successfully]]>
             </line>
             <line>
-              <![CDATA[Navigated to the department page]]>
+              <![CDATA[Selected the first employee]]>
             </line>
             <line>
-              <![CDATA[New Dept was created: NewDept751]]>
+              <![CDATA[Time off was entered]]>
             </line>
             <line>
-              <![CDATA[New dept was found in table of titles<br>]]>
+              <![CDATA[Time off was saved successfully]]>
             </line>
             <line>
-              <![CDATA[New dept was deleted successfully<br>]]>
+              <![CDATA[Time off requests were deleted successfully]]>
             </line>
           </reporter-output>
-        </test-method> <!-- testCreateNewDept -->
-        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestAddNewDept@6ce139a4]" name="catchExceptions" is-config="true" duration-ms="0" started-at="2014-07-18T12:31:50Z" finished-at="2014-07-18T12:31:50Z">
+        </test-method> <!-- testEnterTimeOffDetails -->
+        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="catchExceptions" is-config="true" duration-ms="1" started-at="2014-07-23T17:20:47Z" finished-at="2014-07-23T17:20:47Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testCreateNewDept status=SUCCESS method=TestAddNewDept.testCreateNewDept(com.orasi.bluesource.dataObject.TestAddNewDeptData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewDept@6ce139a4] output=User was logged in successfully]]]>
+                <![CDATA[[TestResult name=testEnterTimeOffDetails status=SUCCESS method=TestEnterTimeOffDetails.testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4] output=User was logged in successfully]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- catchExceptions -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.orasi.bluesource.test.TestAddNewDept@6ce139a4]" name="cleanUp" is-config="true" duration-ms="1172" started-at="2014-07-18T12:31:50Z" finished-at="2014-07-18T12:31:51Z">
+        <test-method status="PASS" signature="testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="testEnterTimeOffDetails" duration-ms="5996" started-at="2014-07-23T17:20:47Z" data-provider="createTimeOffData" finished-at="2014-07-23T17:20:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData@349c1daf]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[User was logged in successfully]]>
+            </line>
+            <line>
+              <![CDATA[Selected the first employee]]>
+            </line>
+            <line>
+              <![CDATA[Time off was entered]]>
+            </line>
+            <line>
+              <![CDATA[Time off was saved successfully]]>
+            </line>
+            <line>
+              <![CDATA[Time off requests were deleted successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testEnterTimeOffDetails -->
+        <test-method status="PASS" signature="testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="testEnterTimeOffDetails" duration-ms="5884" started-at="2014-07-23T17:20:53Z" data-provider="createTimeOffData" finished-at="2014-07-23T17:20:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData@b70da4c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[User was logged in successfully]]>
+            </line>
+            <line>
+              <![CDATA[Selected the first employee]]>
+            </line>
+            <line>
+              <![CDATA[Time off was entered]]>
+            </line>
+            <line>
+              <![CDATA[Time off was saved successfully]]>
+            </line>
+            <line>
+              <![CDATA[Time off requests were deleted successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testEnterTimeOffDetails -->
+        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="catchExceptions" is-config="true" duration-ms="0" started-at="2014-07-23T17:20:53Z" finished-at="2014-07-23T17:20:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testEnterTimeOffDetails status=SUCCESS method=TestEnterTimeOffDetails.testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4] output=User was logged in successfully]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- catchExceptions -->
+        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="catchExceptions" is-config="true" duration-ms="1" started-at="2014-07-23T17:20:59Z" finished-at="2014-07-23T17:20:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testEnterTimeOffDetails status=SUCCESS method=TestEnterTimeOffDetails.testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4] output=User was logged in successfully]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- catchExceptions -->
+        <test-method status="PASS" signature="testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="testEnterTimeOffDetails" duration-ms="15337" started-at="2014-07-23T17:20:59Z" data-provider="createTimeOffData" finished-at="2014-07-23T17:21:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData@bff34c6]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[User was logged in successfully]]>
+            </line>
+            <line>
+              <![CDATA[Selected the first employee]]>
+            </line>
+            <line>
+              <![CDATA[Time off was entered]]>
+            </line>
+            <line>
+              <![CDATA[Time off was saved successfully]]>
+            </line>
+            <line>
+              <![CDATA[Time off requests were deleted successfully]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- testEnterTimeOffDetails -->
+        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="catchExceptions" is-config="true" duration-ms="1" started-at="2014-07-23T17:21:15Z" finished-at="2014-07-23T17:21:15Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testEnterTimeOffDetails status=SUCCESS method=TestEnterTimeOffDetails.testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4] output=User was logged in successfully]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- catchExceptions -->
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="cleanUp" is-config="true" duration-ms="1206" started-at="2014-07-23T17:21:15Z" finished-at="2014-07-23T17:21:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.orasi.bluesource.test.TestAddNewDept -->
-    </test> <!-- Add New Title_Chrome -->
-  </suite> <!-- Multiple Browsers -->
+      </class> <!-- com.orasi.bluesource.test.TestEnterTimeOffDetails -->
+    </test> <!-- Enter time off details for employee -->
+  </suite> <!-- Regression -->
 </testng-results>

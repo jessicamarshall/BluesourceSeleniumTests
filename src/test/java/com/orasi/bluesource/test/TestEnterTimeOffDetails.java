@@ -6,15 +6,21 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import com.orasi.bluesource.core.BaseTest;
+import com.orasi.bluesource.dataObject.TestAddNewEmployeeData;
 import com.orasi.bluesource.dataObject.TestAddNewTitleData;
+import com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData;
+import com.orasi.bluesource.pageObject.EmployeeSummaryPage;
+import com.orasi.bluesource.pageObject.EmployeesPage;
 import com.orasi.bluesource.pageObject.LoginPage;
+import com.orasi.bluesource.pageObject.TimeOffDetailsPage;
 import com.orasi.bluesource.pageObject.TopNavigationBar;
 
 public class TestEnterTimeOffDetails extends BaseTest {
 	
 	
-	@Test(dataProvider = "createNewTitleData", dataProviderClass = TestAddNewTitleData.class)
-	public void testCreateNewTitle(TestAddNewTitleData testData){
+	@Test(dataProvider = "createTimeOffData", dataProviderClass = TestEnterTimeOffDetailsData.class)
+	public void testEnterTimeOffDetails(TestEnterTimeOffDetailsData testData){
+		
 		  //Login
 		  LoginPage loginPage = PageFactory.initElements(driver, LoginPage.class);
 		  loginPage.login(testData.getLoginUsername(), testData.getLoginPassword());
@@ -22,7 +28,41 @@ public class TestEnterTimeOffDetails extends BaseTest {
 		  //Verify user is logged in
 		  TopNavigationBar topNavigationBar = PageFactory.initElements(driver, TopNavigationBar.class);
 		  Assert.assertTrue(topNavigationBar.isLoggedIn());
-		  Reporter.log("User was logged in successfully");	
+		  Reporter.log("User was logged in successfully");
+		  
+		  //Select the first employee for that manager
+		  EmployeesPage employeesPage = PageFactory.initElements(driver, EmployeesPage.class);
+		  employeesPage.selectFirstEmployee();
+		  Reporter.log("Selected the first employee");
+		  
+		  //Click the manage button
+		  EmployeeSummaryPage employeeSummaryPage = PageFactory.initElements(driver, EmployeeSummaryPage.class);
+		  employeeSummaryPage.ClickManageTimeOff();
+		  
+		  //First delete all current time off requests so the new time off request doesn't conflict with any 
+		  //existing
+		  TimeOffDetailsPage timeOffDetailsPage = PageFactory.initElements(driver, TimeOffDetailsPage.class);
+		  timeOffDetailsPage.DeleteAllTimeOff();
+		  
+		  //Enter the time off details
+		  timeOffDetailsPage.enterTimeOff(testData.getDateRequested(), testData.getStartDate(), testData.getEndDate(), 
+				  							testData.getVacationType(), testData.getOtherReason(), testData.getHalfDay());
+		  Reporter.log("Time off was entered");
+		  
+		  //Verify a success message displays
+		  Assert.assertTrue(timeOffDetailsPage.isSuccessMsgDisplayed());
+		  assert timeOffDetailsPage.getSuccessMsgText().contains("Time off successfully saved");
+		  Reporter.log("Time off was saved successfully");
+		  
+		  //Clean up - delete all the requests
+		  timeOffDetailsPage.DeleteAllTimeOff();
+		  
+		  //Verify a success message displays
+		  Assert.assertTrue(timeOffDetailsPage.isSuccessMsgDisplayed());
+		  Reporter.log("Time off requests were deleted successfully");
+		  
+		  //logout
+		  topNavigationBar.logout();
 	
 	}
 }

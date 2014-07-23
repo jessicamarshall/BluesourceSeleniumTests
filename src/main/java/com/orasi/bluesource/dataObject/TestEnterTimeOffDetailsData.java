@@ -14,15 +14,33 @@ import org.testng.annotations.DataProvider;
 import au.com.bytecode.opencsv.CSVReader;
 
 public class TestEnterTimeOffDetailsData {
-	
+	private String loginUsername;
+	private String loginPassword;
 	private String dateRequested;
 	private String startDate;
 	private String endDate;
 	private String vacationType;
+	private String otherReason;
 	private String halfDay;
 
 
 	//Getters & setters
+	public String getLoginUsername() {
+		return loginUsername;
+	}
+
+	public void setLoginUsername(String loginUsername) {
+		this.loginUsername = loginUsername;
+	}
+
+	public String getLoginPassword() {
+		return loginPassword;
+	}
+
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
+	}
+	
 	public String getDateRequested() {
 		return dateRequested;
 	}
@@ -50,14 +68,19 @@ public class TestEnterTimeOffDetailsData {
 	public String getVacationType() {
 		return vacationType;
 	}
-
 	public void setVacationType(String vacationType) {
 		this.vacationType = vacationType;
 	}
-	public String isHalfDay() {
-		return halfDay;
+	public String getOtherReason() {
+		return otherReason;
 	}
 
+	public void setOtherReason(String otherReason) {
+		this.otherReason = otherReason;
+	}
+	public String getHalfDay() {
+		return halfDay;
+	}
 	public void setHalfDay(String halfDay) {
 		this.halfDay = halfDay;
 	}
@@ -72,11 +95,11 @@ public class TestEnterTimeOffDetailsData {
 		Calendar startDate = Calendar.getInstance();    
 		Calendar endDate = Calendar.getInstance(); 
 		Calendar requestedDate = Calendar.getInstance(); 
-		SimpleDateFormat ft = new SimpleDateFormat ("MM-dd-yyyy");
+		SimpleDateFormat ft = new SimpleDateFormat ("MM-dd-YYYY");
 		
 		//open the CSV file
 		CSVReader csvReader;
-		String path = "C:\\Maven\\BluesourceSeleniumTests\\src\\resources\\TestAddNewTitle.csv";
+		String path = "C:\\Maven\\BluesourceSeleniumTests\\src\\resources\\TestEnterTimeOffDetails.csv";
 		try {
 			csvReader = new CSVReader(new FileReader(path));
 		} catch (FileNotFoundException e) {
@@ -99,44 +122,49 @@ public class TestEnterTimeOffDetailsData {
 			
 
 			TestEnterTimeOffDetailsData testData = new TestEnterTimeOffDetailsData();
-			
+			testData.setLoginUsername(strArray[0].trim());
+			testData.setLoginPassword(strArray[1].trim());
 			//for the requested date, if its marked skipped, use todays date
-			if (strArray[0].equalsIgnoreCase("<SKIP>")) {
+			if (strArray[2].equalsIgnoreCase("<SKIP>")) {
 				requestedDate.setTime(new Date());
-				testData.setDateRequested(ft.format(requestedDate));
+				testData.setDateRequested(ft.format(requestedDate.getTime()));
 			}
 			else {
-				testData.setDateRequested(strArray[0]);
+				testData.setDateRequested(strArray[2]);
 			}
-				
+
 			
 			//for the start date, if its marked skipped, pick today 
-			if (strArray[1].equalsIgnoreCase("<SKIP>")) {
+			if (strArray[3].equalsIgnoreCase("<SKIP>")) {
 				startDate.setTime(new Date());
-				testData.setStartDate(ft.format(startDate));
+				testData.setStartDate(ft.format(startDate.getTime()));
 			}
 			else {
-				testData.setStartDate(strArray[1]);
+				testData.setStartDate(strArray[3]);
 			}
 			
 			//for the end date, if its marked skipped, pick today + 1 unless its a weekend
-			if (strArray[2].equalsIgnoreCase("<SKIP>")) {
+			if (strArray[4].equalsIgnoreCase("<SKIP>")) {
 				endDate.setTime(new Date());
+				endDate.add(Calendar.DATE, 1);
 				if (endDate.get(Calendar.DAY_OF_WEEK) == 7 || endDate.get(Calendar.DAY_OF_WEEK) == 1){
 					endDate.add(Calendar.DATE, 2);
 				}
-				testData.setEndDate(ft.format(startDate));
+				testData.setEndDate(ft.format(endDate.getTime()));
 			}
 			else {
-				testData.setEndDate(strArray[2]);
+				testData.setEndDate(strArray[4]);
 			}
 			
 			//vacation type
-			testData.setVacationType(strArray[3]);
+			testData.setVacationType(strArray[5]);
+			
+			//other vacation type reason
+			testData.setOtherReason(strArray[6]);
 			
 			//half day (true or false)
-			testData.setHalfDay(strArray[4]);
-			
+			testData.setHalfDay(strArray[7]);
+			timeOffList.add(testData);
 
 		}
 		

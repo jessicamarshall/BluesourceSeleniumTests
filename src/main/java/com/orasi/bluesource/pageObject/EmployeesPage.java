@@ -89,5 +89,16 @@ public class EmployeesPage {
 		return false;
 		
 	}
+	
+	//This method just selects the first employee in the employee table - so you don't need to know
+	//who the employee is
+	public void selectFirstEmployee(){
+		
+		//Get all the table elements
+		List<WebElement> elementList = driver.findElements(By.cssSelector("a.ng-binding"));
+		
+		//click on the first one
+		elementList.get(0).click();
+	}
 
 }

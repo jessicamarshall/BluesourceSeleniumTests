@@ -69,7 +69,7 @@ public class BaseTest extends CommonUtils{
 				capabilities.setJavascriptEnabled(true);
 			}
 			
-			driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
+			driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS); 
 		  
 			//launch the browser
 			driver.get("http://bluesourcestaging.herokuapp.com/login");

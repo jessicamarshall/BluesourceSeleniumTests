@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Regression]">
-  <test name="Add New Employee(failed)">
+  <parameter name="browser" value="Chrome"/>
+  <test name="Enter time off details for employee(failed)">
+    <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="com.orasi.bluesource.test.TestAddNewTitle">
+      <class name="com.orasi.bluesource.test.TestEnterTimeOffDetails">
         <methods>
           <include name="launchBrowser"/>
           <include name="cleanUp"/>
+          <include name="testEnterTimeOffDetails" invocation-numbers="3"/>
           <include name="catchExceptions"/>
-          <include name="testCreateNewTitle" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.orasi.bluesource.test.TestAddNewTitle -->
+      </class> <!-- com.orasi.bluesource.test.TestEnterTimeOffDetails -->
     </classes>
-  </test> <!-- Add New Employee(failed) -->
+  </test> <!-- Enter time off details for employee(failed) -->
 </suite> <!-- Failed suite [Regression] -->
