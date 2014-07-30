@@ -17,6 +17,7 @@ public class TimeOffDetailsPage {
 	WebDriver driver;
 	Select select;
 	
+	
 	//All the page elements
 	@FindBy(id = "new_vacation_date_requested")
 	WebElement dateRequestedField;
@@ -33,7 +34,7 @@ public class TimeOffDetailsPage {
 	@FindBy(id = "new_vacation_vacation_type")
 	WebElement vacationTypeSelect;
 	
-	@FindBy(id = "new_vacation_half_day")
+	@FindBy(css = "input[class = 'half-day']")
 	WebElement halfDayButton;
 	
 	//@FindBy(name = "commit")
@@ -89,6 +90,8 @@ public class TimeOffDetailsPage {
 
 		//If its a half day
 		if (halfDay.equalsIgnoreCase("TRUE")){
+			WebDriverWait wait = new WebDriverWait(driver, 5);
+			wait.until(ExpectedConditions.visibilityOf(halfDayButton));
 			halfDayButton.click();
 		}
 		

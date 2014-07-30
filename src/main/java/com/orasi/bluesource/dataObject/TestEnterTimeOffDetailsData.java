@@ -143,10 +143,10 @@ public class TestEnterTimeOffDetailsData {
 				testData.setStartDate(strArray[3]);
 			}
 			
-			//for the end date, if its marked skipped, pick today + 1 unless its a weekend
+			//for the end date, if its marked skipped, pick today unless its a weekend
 			if (strArray[4].equalsIgnoreCase("<SKIP>")) {
 				endDate.setTime(new Date());
-				endDate.add(Calendar.DATE, 1);
+				//endDate.add(Calendar.DATE, 1);
 				if (endDate.get(Calendar.DAY_OF_WEEK) == 7 || endDate.get(Calendar.DAY_OF_WEEK) == 1){
 					endDate.add(Calendar.DATE, 2);
 				}

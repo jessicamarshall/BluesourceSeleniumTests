@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="3" verbose="0" name="Failed suite [Multiple Browsers]" parallel="tests">
+<suite verbose="0" name="Failed suite [Regression]">
   <parameter name="browser" value="Chrome"/>
-  <test name="Add New Title_Chrome(failed)" parallel="tests" preserve-order="false">
+  <test name="Enter time off details for employee(failed)" preserve-order="false">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="com.orasi.bluesource.test.TestAddNewDept">
+      <class name="com.orasi.bluesource.test.TestAddNewTitle">
         <methods>
           <include name="launchBrowser"/>
           <include name="cleanUp"/>
           <include name="catchExceptions"/>
-          <include name="testCreateNewDept" invocation-numbers="0"/>
+          <include name="testCreateNewTitle" invocation-numbers="0"/>
         </methods>
       </class>
     </classes>

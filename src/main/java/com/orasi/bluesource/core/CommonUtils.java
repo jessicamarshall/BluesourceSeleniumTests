@@ -28,8 +28,10 @@ public class CommonUtils {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+        	  Reporter.log("<a href=" + failFile.getAbsolutePath() + "</a>");
+
         	  Reporter.log("Failure");
-        	  Reporter.log("<a href='" + failFile.getAbsolutePath() + "'>screenshot</a>");
+        	  //Reporter.log("<a href='" + failFile.getAbsolutePath() + "'>screenshot</a>");
         	  return failFile;
          // } catch (IOException e1) {
            //   e1.printStackTrace();

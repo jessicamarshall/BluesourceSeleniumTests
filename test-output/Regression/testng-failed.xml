@@ -5,14 +5,14 @@
   <test name="Enter time off details for employee(failed)">
     <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="com.orasi.bluesource.test.TestEnterTimeOffDetails">
+      <class name="com.orasi.bluesource.test.TestAddNewTitle">
         <methods>
           <include name="launchBrowser"/>
           <include name="cleanUp"/>
-          <include name="testEnterTimeOffDetails" invocation-numbers="3"/>
           <include name="catchExceptions"/>
+          <include name="testCreateNewTitle" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.orasi.bluesource.test.TestEnterTimeOffDetails -->
+      </class> <!-- com.orasi.bluesource.test.TestAddNewTitle -->
     </classes>
   </test> <!-- Enter time off details for employee(failed) -->
 </suite> <!-- Failed suite [Regression] -->

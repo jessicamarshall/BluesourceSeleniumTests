@@ -1,73 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
     <line>
       <![CDATA[User was logged in successfully]]>
     </line>
     <line>
-      <![CDATA[Selected the first employee]]>
+      <![CDATA[Navigated to the listing titles page<br>]]>
     </line>
     <line>
-      <![CDATA[Time off was entered]]>
+      <![CDATA[Navigated to the new title page<br>]]>
     </line>
     <line>
-      <![CDATA[Time off was saved successfully]]>
+      <![CDATA[<a href=C:\Maven\BluesourceSeleniumTests\failure_screenshots\testCreateNewTitle_29_07_2014_03_16_35.png</a>]]>
     </line>
     <line>
-      <![CDATA[Time off requests were deleted successfully]]>
-    </line>
-    <line>
-      <![CDATA[User was logged in successfully]]>
-    </line>
-    <line>
-      <![CDATA[Selected the first employee]]>
-    </line>
-    <line>
-      <![CDATA[Time off was entered]]>
-    </line>
-    <line>
-      <![CDATA[Time off was saved successfully]]>
-    </line>
-    <line>
-      <![CDATA[Time off requests were deleted successfully]]>
-    </line>
-    <line>
-      <![CDATA[User was logged in successfully]]>
-    </line>
-    <line>
-      <![CDATA[Selected the first employee]]>
-    </line>
-    <line>
-      <![CDATA[Time off was entered]]>
-    </line>
-    <line>
-      <![CDATA[Time off was saved successfully]]>
-    </line>
-    <line>
-      <![CDATA[Time off requests were deleted successfully]]>
-    </line>
-    <line>
-      <![CDATA[User was logged in successfully]]>
-    </line>
-    <line>
-      <![CDATA[Selected the first employee]]>
-    </line>
-    <line>
-      <![CDATA[Time off was entered]]>
-    </line>
-    <line>
-      <![CDATA[Time off was saved successfully]]>
-    </line>
-    <line>
-      <![CDATA[Time off requests were deleted successfully]]>
+      <![CDATA[Failure]]>
     </line>
   </reporter-output>
-  <suite name="Regression" duration-ms="38839" started-at="2014-07-23T21:20:37Z" finished-at="2014-07-23T21:21:16Z">
+  <suite name="Regression" duration-ms="8873" started-at="2014-07-29T19:16:28Z" finished-at="2014-07-29T19:16:37Z">
     <groups>
     </groups>
-    <test name="Enter time off details for employee" duration-ms="38839" started-at="2014-07-23T21:20:37Z" finished-at="2014-07-23T21:21:16Z">
-      <class name="com.orasi.bluesource.test.TestEnterTimeOffDetails">
-        <test-method status="PASS" signature="launchBrowser(java.lang.String)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="launchBrowser" is-config="true" duration-ms="2974" started-at="2014-07-23T17:20:37Z" finished-at="2014-07-23T17:20:40Z">
+    <test name="Enter time off details for employee" duration-ms="8873" started-at="2014-07-29T19:16:28Z" finished-at="2014-07-29T19:16:37Z">
+      <class name="com.orasi.bluesource.test.TestAddNewTitle">
+        <test-method status="PASS" signature="launchBrowser(java.lang.String)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@38082d64]" name="launchBrowser" is-config="true" duration-ms="3167" started-at="2014-07-29T15:16:28Z" finished-at="2014-07-29T15:16:31Z">
           <params>
             <param index="0">
               <value>
@@ -78,159 +33,115 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="testEnterTimeOffDetails" duration-ms="7390" started-at="2014-07-23T17:20:40Z" data-provider="createTimeOffData" finished-at="2014-07-23T17:20:47Z">
+        <test-method status="FAIL" signature="testCreateNewTitle(com.orasi.bluesource.dataObject.TestAddNewTitleData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@38082d64]" name="testCreateNewTitle" duration-ms="4257" started-at="2014-07-29T15:16:31Z" data-provider="createNewTitleData" finished-at="2014-07-29T15:16:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData@ff684e1]]>
+                <![CDATA[com.orasi.bluesource.dataObject.TestAddNewTitleData@3270d194]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element
+  (Session info: chrome=36.0.1985.125)
+  (Driver info: chromedriver=2.9.248315,platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2.02 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.42.2', revision: '6a6995d', time: '2014-06-03 17:42:30'
+System info: host: 'Jesse', ip: '10.238.242.97', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_05'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, chrome={userDataDir=C:\Users\JESSIC~1.MAR\AppData\Local\Temp\scoped_dir4492_21833}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, version=36.0.1985.125, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fb1118e290ab32755f8413e4165558fb]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element
+  (Session info: chrome=36.0.1985.125)
+  (Driver info: chromedriver=2.9.248315,platform=Windows NT 6.1 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 2.02 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.42.2', revision: '6a6995d', time: '2014-06-03 17:42:30'
+System info: host: 'Jesse', ip: '10.238.242.97', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_05'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, chrome={userDataDir=C:\Users\JESSIC~1.MAR\AppData\Local\Temp\scoped_dir4492_21833}, takesHeapSnapshot=true, databaseEnabled=false, handlesAlerts=true, version=36.0.1985.125, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: fb1118e290ab32755f8413e4165558fb
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:441)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:426)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:59)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:34)
+	at com.sun.proxy.$Proxy11.isDisplayed(Unknown Source)
+	at com.orasi.bluesource.pageObject.ListingTitlesPage.isSuccessMsgDisplayed(ListingTitlesPage.java:46)
+	at com.orasi.bluesource.test.TestAddNewTitle.testCreateNewTitle(TestAddNewTitle.java:49)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
             <line>
               <![CDATA[User was logged in successfully]]>
             </line>
             <line>
-              <![CDATA[Selected the first employee]]>
+              <![CDATA[Navigated to the listing titles page<br>]]>
             </line>
             <line>
-              <![CDATA[Time off was entered]]>
-            </line>
-            <line>
-              <![CDATA[Time off was saved successfully]]>
-            </line>
-            <line>
-              <![CDATA[Time off requests were deleted successfully]]>
+              <![CDATA[Navigated to the new title page<br>]]>
             </line>
           </reporter-output>
-        </test-method> <!-- testEnterTimeOffDetails -->
-        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="catchExceptions" is-config="true" duration-ms="1" started-at="2014-07-23T17:20:47Z" finished-at="2014-07-23T17:20:47Z">
+        </test-method> <!-- testCreateNewTitle -->
+        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@38082d64]" name="catchExceptions" is-config="true" duration-ms="220" started-at="2014-07-29T15:16:35Z" finished-at="2014-07-29T15:16:35Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=testEnterTimeOffDetails status=SUCCESS method=TestEnterTimeOffDetails.testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4] output=User was logged in successfully]]]>
+                <![CDATA[[TestResult name=testCreateNewTitle status=FAILURE method=TestAddNewTitle.testCreateNewTitle(com.orasi.bluesource.dataObject.TestAddNewTitleData)[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@38082d64] output=User was logged in successfully]]]>
               </value>
             </param>
           </params>
           <reporter-output>
+            <line>
+              <![CDATA[<a href=C:\Maven\BluesourceSeleniumTests\failure_screenshots\testCreateNewTitle_29_07_2014_03_16_35.png</a>]]>
+            </line>
+            <line>
+              <![CDATA[Failure]]>
+            </line>
           </reporter-output>
         </test-method> <!-- catchExceptions -->
-        <test-method status="PASS" signature="testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="testEnterTimeOffDetails" duration-ms="5996" started-at="2014-07-23T17:20:47Z" data-provider="createTimeOffData" finished-at="2014-07-23T17:20:53Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData@349c1daf]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[User was logged in successfully]]>
-            </line>
-            <line>
-              <![CDATA[Selected the first employee]]>
-            </line>
-            <line>
-              <![CDATA[Time off was entered]]>
-            </line>
-            <line>
-              <![CDATA[Time off was saved successfully]]>
-            </line>
-            <line>
-              <![CDATA[Time off requests were deleted successfully]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- testEnterTimeOffDetails -->
-        <test-method status="PASS" signature="testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="testEnterTimeOffDetails" duration-ms="5884" started-at="2014-07-23T17:20:53Z" data-provider="createTimeOffData" finished-at="2014-07-23T17:20:59Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData@b70da4c]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[User was logged in successfully]]>
-            </line>
-            <line>
-              <![CDATA[Selected the first employee]]>
-            </line>
-            <line>
-              <![CDATA[Time off was entered]]>
-            </line>
-            <line>
-              <![CDATA[Time off was saved successfully]]>
-            </line>
-            <line>
-              <![CDATA[Time off requests were deleted successfully]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- testEnterTimeOffDetails -->
-        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="catchExceptions" is-config="true" duration-ms="0" started-at="2014-07-23T17:20:53Z" finished-at="2014-07-23T17:20:53Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testEnterTimeOffDetails status=SUCCESS method=TestEnterTimeOffDetails.testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4] output=User was logged in successfully]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- catchExceptions -->
-        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="catchExceptions" is-config="true" duration-ms="1" started-at="2014-07-23T17:20:59Z" finished-at="2014-07-23T17:20:59Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testEnterTimeOffDetails status=SUCCESS method=TestEnterTimeOffDetails.testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4] output=User was logged in successfully]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- catchExceptions -->
-        <test-method status="PASS" signature="testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="testEnterTimeOffDetails" duration-ms="15337" started-at="2014-07-23T17:20:59Z" data-provider="createTimeOffData" finished-at="2014-07-23T17:21:15Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData@bff34c6]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-            <line>
-              <![CDATA[User was logged in successfully]]>
-            </line>
-            <line>
-              <![CDATA[Selected the first employee]]>
-            </line>
-            <line>
-              <![CDATA[Time off was entered]]>
-            </line>
-            <line>
-              <![CDATA[Time off was saved successfully]]>
-            </line>
-            <line>
-              <![CDATA[Time off requests were deleted successfully]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- testEnterTimeOffDetails -->
-        <test-method status="PASS" signature="catchExceptions(org.testng.ITestResult)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="catchExceptions" is-config="true" duration-ms="1" started-at="2014-07-23T17:21:15Z" finished-at="2014-07-23T17:21:15Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=testEnterTimeOffDetails status=SUCCESS method=TestEnterTimeOffDetails.testEnterTimeOffDetails(com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData)[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4] output=User was logged in successfully]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- catchExceptions -->
-        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.orasi.bluesource.test.TestEnterTimeOffDetails@6ce139a4]" name="cleanUp" is-config="true" duration-ms="1206" started-at="2014-07-23T17:21:15Z" finished-at="2014-07-23T17:21:16Z">
+        <test-method status="PASS" signature="cleanUp()[pri:0, instance:com.orasi.bluesource.test.TestAddNewTitle@38082d64]" name="cleanUp" is-config="true" duration-ms="1177" started-at="2014-07-29T15:16:35Z" finished-at="2014-07-29T15:16:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- cleanUp -->
-      </class> <!-- com.orasi.bluesource.test.TestEnterTimeOffDetails -->
+      </class> <!-- com.orasi.bluesource.test.TestAddNewTitle -->
     </test> <!-- Enter time off details for employee -->
   </suite> <!-- Regression -->
 </testng-results>
