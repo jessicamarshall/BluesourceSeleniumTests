@@ -5,45 +5,64 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.orasi.bluesource.interfaces.impl.internal.ElementFactory;
+import com.orasi.bluesource.interfaces.Button;
+import com.orasi.bluesource.interfaces.Link;
+import com.orasi.bluesource.interfaces.Listbox;
+import com.orasi.bluesource.interfaces.Textbox;
+import com.orasi.bluesource.interfaces.impl.internal.ElementFactory;
+
 public class TopNavigationBar {
-	WebDriver driver;
+	private static WebDriver driver;
 	
 	//All the page elements:
 	@FindBy(linkText = "Logout")
-	WebElement logoutLink;
+	private static Link lnkLogout;
 	
 	@FindBy(xpath = "//a[text() = 'Admin ']")
-	WebElement adminDropLink;
+	private Link lnkAdminDrop;
 	
 	@FindBy(css = "a[href = '/admin/departments']")
-	WebElement deptLink;
+	private Link lnkDept;
 	
 	@FindBy(css = "a[href = '/admin/titles']")
-	WebElement titleLink;
+	private Link lnkTitle;
 	
+
 	//Constructor
 	public TopNavigationBar(WebDriver driver){
-		this.driver = driver;
+		TopNavigationBar.driver = driver;
+		ElementFactory.initElements(driver, this); 
 	}
+	
+	private static void topNavigationBarLoaded(){
+		  while (lnkLogout==null){
+		      initialize(driver);
+		     }
+	}
+	
+	private static TopNavigationBar initialize(WebDriver driver) {
+	     return ElementFactory.initElements(driver, TopNavigationBar.class);         
+	 }
 	
 	//methods
 	public void clickAdminLink(){
-		adminDropLink.click();
+		lnkAdminDrop.click();
 	}
 	public void clickDepartmentsLink(){
-		deptLink.click();
+		lnkDept.click();
 	}
 	public void clickTitlesLink(){
-		titleLink.click();
+		lnkTitle.click();
 	}
 	
 	//Verify logout link is displayed
 	public boolean isLoggedIn(){
-		return logoutLink.isDisplayed();
+		return lnkLogout.isDisplayed();
 	}
 	
 	//Click logout
 	public void logout(){
-		logoutLink.click();
+		lnkLogout.click();
 	}
 }

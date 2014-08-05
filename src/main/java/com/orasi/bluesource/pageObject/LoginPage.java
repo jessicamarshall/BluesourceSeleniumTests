@@ -5,36 +5,52 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.orasi.bluesource.interfaces.Button;
+import com.orasi.bluesource.interfaces.Textbox;
+import com.orasi.bluesource.interfaces.impl.internal.ElementFactory;
+
 
 
 public class LoginPage {
-	WebDriver driver;
-	
-	//constructor
-	public LoginPage(WebDriver driver){
-		this.driver = driver;
-	}
+	static WebDriver driver;
 	
 	//all the page elements
 	@FindBy(id = "employee_username")
-	public WebElement usernameField;
+	private static Textbox txtUsername;
 	
 	@FindBy(id = "employee_password")
-	public WebElement passwordField;
+	private  Textbox txtPassword;
 	
 	@FindBy(name = "commit")
-	public WebElement loginButton;
+	private  Button btnLogin;
+	
+	
+	//Constructor
+	public LoginPage(WebDriver driver){
+		LoginPage.driver = driver;
+		ElementFactory.initElements(driver, this); 
+	}
+	
+	private static void loginPageLoaded(){
+		  while (txtUsername==null){
+		      initialize(driver);
+		     }
+	}
+	
+	private static LoginPage initialize(WebDriver driver) {
+	     return ElementFactory.initElements(driver, LoginPage.class);         
+	 }
 	
 	//Methods
 	
 	public void login(String username, String password) {
 		driver.switchTo().defaultContent();
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		wait.until(ExpectedConditions.elementToBeClickable(usernameField));
+		wait.until(ExpectedConditions.elementToBeClickable(txtUsername));
 
-		usernameField.sendKeys(username);
-		passwordField.sendKeys(password);
-		loginButton.click();
+		txtUsername.safeSet(username);
+		txtPassword.safeSet(password);
+		btnLogin.click();
 	}
 	
 

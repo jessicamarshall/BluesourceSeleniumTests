@@ -1,4 +1,4 @@
-package com.orasi.bluesource.core;
+package com.orasi.bluesource.test;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,6 +24,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
+import com.orasi.bluesource.core.CommonUtils;
 
 
 public class BaseTest extends CommonUtils{

@@ -12,57 +12,70 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.orasi.bluesource.interfaces.Button;
+import com.orasi.bluesource.interfaces.Label;
+import com.orasi.bluesource.interfaces.Listbox;
+import com.orasi.bluesource.interfaces.Textbox;
+import com.orasi.bluesource.interfaces.impl.internal.ElementFactory;
+
 public class TimeOffDetailsPage {
 	
-	WebDriver driver;
-	Select select;
-	
+	private static WebDriver driver;
 	
 	//All the page elements
 	@FindBy(id = "new_vacation_date_requested")
-	WebElement dateRequestedField;
+	private static Textbox txtDateRequested;
 	
 	@FindBy(id = "new_vacation_start_date")
-	WebElement startDateField;
+	private Textbox txtStartDate;
 	
 	@FindBy(id = "new_vacation_end_date")
-	WebElement endDateField;
+	private Textbox txtEndDate;
 	
 	@FindBy(className = "business-days")
-	WebElement totalDaysLabel;
+	private Label lblTotalDays;
 	
 	@FindBy(id = "new_vacation_vacation_type")
-	WebElement vacationTypeSelect;
+	private Listbox lstVacationType;
 	
 	@FindBy(css = "input[class = 'half-day']")
-	WebElement halfDayButton;
-	
-	//@FindBy(name = "commit")
-	//WebElement saveButton;
+	private Button btnHalfDay;
 	
 	@FindBy(css = "input[value = 'Save Time Off']")
-	WebElement saveButton;
+	private Button btnSave;
 	
 	@FindBy(css = ".alert-success.alert-dismissable")
-	WebElement successMessage;
+	private Label lblSuccessMsg;
 	
 	@FindBy(name = "new[vacation][reason]")
-	WebElement reasonField;
+	private Textbox txtReason;
 	
+
 	//Constructor
 	public TimeOffDetailsPage(WebDriver driver){
-		this.driver = driver;
+		TimeOffDetailsPage.driver = driver;
+		ElementFactory.initElements(driver, this); 
 	}
+	
+	private static void timeOffDetailsPageLoaded(){
+		  while (txtDateRequested==null){
+		      initialize(driver);
+		     }
+	}
+	
+	private static TimeOffDetailsPage initialize(WebDriver driver) {
+	     return ElementFactory.initElements(driver, TimeOffDetailsPage.class);         
+	 }
 	
 	//Methods
 	public boolean isSuccessMsgDisplayed(){
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".alert-success.alert-dismissable")));
-		return successMessage.isDisplayed();
+		return lblSuccessMsg.isDisplayed();
 	}
 	
 	public String getSuccessMsgText(){
-		return successMessage.getText();
+		return lblSuccessMsg.getText();
 	}
 	
 	public void hoverOverElement(WebElement element){
@@ -75,28 +88,27 @@ public class TimeOffDetailsPage {
 	public void enterTimeOff(String dateRequested, String startDate, String endDate, String vacationType,
 								String otherReason, String halfDay ) {
 		//Enter the data
-		dateRequestedField.sendKeys(dateRequested);
-		startDateField.sendKeys(startDate);
-		endDateField.sendKeys(endDate);
-		select = new Select(vacationTypeSelect);
-		select.selectByVisibleText(vacationType);
+		txtDateRequested.safeSet(dateRequested);
+		txtStartDate.safeSet(startDate);
+		txtEndDate.safeSet(endDate);
+		lstVacationType.select(vacationType);
 		
 		//If the vacation type is 'Other', then need to fill out the reason field
 		if (vacationType.equalsIgnoreCase("Other")) {
 			//first you must hover over the vacation type field after selecting other
-			hoverOverElement(vacationTypeSelect);
-			reasonField.sendKeys(otherReason);
+			hoverOverElement(lstVacationType);
+			txtReason.safeSet(otherReason);
 		}
 
 		//If its a half day
 		if (halfDay.equalsIgnoreCase("TRUE")){
 			WebDriverWait wait = new WebDriverWait(driver, 5);
-			wait.until(ExpectedConditions.visibilityOf(halfDayButton));
-			halfDayButton.click();
+			wait.until(ExpectedConditions.visibilityOf(btnHalfDay));
+			btnHalfDay.click();
 		}
 		
 
-		saveButton.click();
+		btnSave.click();
 
 	}
 	

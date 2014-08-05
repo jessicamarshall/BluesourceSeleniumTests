@@ -4,27 +4,43 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.orasi.bluesource.interfaces.Button;
+import com.orasi.bluesource.interfaces.Listbox;
+import com.orasi.bluesource.interfaces.Textbox;
+import com.orasi.bluesource.interfaces.impl.internal.ElementFactory;
 
 public class NewTitlePage {
 	
-	WebDriver driver;
+	private static WebDriver driver;
 
 	//All the page elements
 	@FindBy(id = "title_name")
-	WebElement titleField;
+	private static Textbox txtTitle;
 	
 	@FindBy(name = "commit")
-	WebElement createTitleButton;
+	private Button btnCreateTitle;
 	
+
 	//Constructor
 	public NewTitlePage(WebDriver driver){
-		this.driver = driver;
-	}	
+		NewTitlePage.driver = driver;
+		ElementFactory.initElements(driver, this); 
+	}
+	
+	private static void newTitlePageLoaded(){
+		  while (txtTitle==null){
+		      initialize(driver);
+		     }
+	}
+	
+	private static NewTitlePage initialize(WebDriver driver) {
+	     return ElementFactory.initElements(driver, NewTitlePage.class);         
+	 }
 	
 	//method to create a new title
 	public void CreateNewTitle(String newTitle){
-		titleField.sendKeys(newTitle);
-		createTitleButton.click();
+		txtTitle.safeSet(newTitle);
+		btnCreateTitle.click();
 	}
 
 }

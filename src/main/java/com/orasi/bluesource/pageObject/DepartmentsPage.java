@@ -8,39 +8,53 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.orasi.bluesource.interfaces.Label;
+import com.orasi.bluesource.interfaces.Link;
+import com.orasi.bluesource.interfaces.impl.internal.ElementFactory;
 public class DepartmentsPage {
 	
-	WebDriver driver;
+	static WebDriver driver;
 	
 	//All the page elements
 	@FindBy(linkText = "Add Department")
-	WebElement addDeptLink;
+	static
+	private Link lnkAddDept;
 	
 	@FindBy(xpath = "//h1[text() = 'Departments']")
-	WebElement titleHeader;
+	private Label lblTitle;
 
 	@FindBy(css = ".alert-success.alert-dismissable")
-	WebElement successMessage;
+	private Label lblSuccessMsg;
 	
-	//constructor
+	//Constructor
 	public DepartmentsPage(WebDriver driver){
-		this.driver = driver;
+		DepartmentsPage.driver = driver;
+		ElementFactory.initElements(driver, this); 
 	}
 	
 	//Methods
+	private static void departmentsPageLoaded(){
+		  while (lnkAddDept==null){
+		      initialize(driver);
+		     }
+	}
+	
+	private static DepartmentsPage initialize(WebDriver driver) {
+	     return ElementFactory.initElements(driver, DepartmentsPage.class);         
+	 }
 	
 	//click add dept link
 	public void ClickAddDeptLink(){
-		addDeptLink.click();
+		lnkAddDept.click();
 	}
 	
 	public boolean isTitleHeaderDisplayed(){
-		return titleHeader.isDisplayed();
+		return lblTitle.isDisplayed();
 	}
 	
 	//return if the success message is displayed
 	public boolean IsSuccessMsgDisplayed(){
-		return successMessage.isDisplayed();
+		return lblSuccessMsg.isDisplayed();
 	}
 	
 	//search page for a dept, return if displayed

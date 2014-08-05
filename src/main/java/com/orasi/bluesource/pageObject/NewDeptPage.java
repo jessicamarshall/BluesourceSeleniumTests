@@ -4,28 +4,44 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.orasi.bluesource.interfaces.Button;
+import com.orasi.bluesource.interfaces.Listbox;
+import com.orasi.bluesource.interfaces.Textbox;
+import com.orasi.bluesource.interfaces.impl.internal.ElementFactory;
 public class NewDeptPage {
 
-	WebDriver driver;
+	static WebDriver driver;
 
 	//All the page elements
 	@FindBy(id = "department_name")
-	WebElement deptField;
+	private static Textbox txtDept;
 	
 	@FindBy(id = "department_department_id")
-	WebElement parentDeptField;
+	private Textbox txtParentDept;
 	
 	@FindBy(name = "commit")
-	WebElement createDeptButton;
+	private Button btnCreateDept;
 	
+
 	//Constructor
 	public NewDeptPage(WebDriver driver){
-		this.driver = driver;
-	}	
+		NewDeptPage.driver = driver;
+		ElementFactory.initElements(driver, this); 
+	}
+	
+	private static void newDeptPageLoaded(){
+		  while (txtDept==null){
+		      initialize(driver);
+		     }
+	}
+	
+	private static NewDeptPage initialize(WebDriver driver) {
+	     return ElementFactory.initElements(driver, NewDeptPage.class);         
+	 }
 	
 	//method to create a new title
 	public void CreateNewDept(String dept){
-		deptField.sendKeys(dept);
-		createDeptButton.click();
+		txtDept.safeSet(dept);
+		btnCreateDept.click();
 	}
 }

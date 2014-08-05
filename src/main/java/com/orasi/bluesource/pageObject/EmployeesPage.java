@@ -10,42 +10,60 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
+import com.orasi.bluesource.interfaces.Button;
+import com.orasi.bluesource.interfaces.Element;
+import com.orasi.bluesource.interfaces.Label;
+import com.orasi.bluesource.interfaces.Listbox;
+import com.orasi.bluesource.interfaces.Textbox;
+import com.orasi.bluesource.interfaces.impl.internal.ElementFactory;
 
 public class EmployeesPage {
-	WebDriver driver;
+	static WebDriver driver;
 	
 	//All the page elements
 	@FindBy(css = "button[type = 'submit']")
-	WebElement addButton;
+	static
+	private Button btnAdd;
 	
 	@FindBy(css = "input[id = 'search-bar']")
-	WebElement searchField;
+	private Textbox txtSearch;
 	
 	@FindBy(css = "a.ng-binding")
-	WebElement tableCell;
+	private Element tableCell;
 	
 	@FindBy(css = ".alert-success.alert-dismissable")
-	WebElement successMessage;
+	private Label lblSuccessMsg;
 	
 	//Constructor
 	public EmployeesPage(WebDriver driver){
-		this.driver = driver;
+		EmployeesPage.driver = driver;
+		ElementFactory.initElements(driver, this); 
 	}
+	
+	private static void employeesPageLoaded(){
+		  while (btnAdd==null){
+		      initialize(driver);
+		     }
+	}
+	
+	private static EmployeesPage initialize(WebDriver driver) {
+	     return ElementFactory.initElements(driver, EmployeesPage.class);         
+	 }
 	
 	//Methods
 	
 	//Click the add button
 	public void clickAddNewEmployee(){
 		//Click add
-		addButton.click();
+		btnAdd.click();
 	}
 	
 	public boolean isSuccessMsgDisplayed(){
-		return successMessage.isDisplayed();
+		return lblSuccessMsg.isDisplayed();
 	}
 	
 	public String getSuccessMsgText(){
-		return successMessage.getText();
+		return lblSuccessMsg.getText();
 	}
 	
 	//search the employee results table by first & last name & click on it
@@ -54,7 +72,7 @@ public class EmployeesPage {
 		
 		//enter the name to search by
 		//driver.findElement(By.cssSelector("input[id = 'search-bar']")).sendKeys(firstName + " " + lastName);
-		searchField.sendKeys(firstName + " " + lastName);
+		txtSearch.safeSet(firstName + " " + lastName);
 		
 		//wait for page to load/refresh
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("a.ng-binding")));

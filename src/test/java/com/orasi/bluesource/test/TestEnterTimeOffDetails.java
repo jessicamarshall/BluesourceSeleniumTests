@@ -5,7 +5,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import com.orasi.bluesource.core.BaseTest;
 import com.orasi.bluesource.dataObject.TestAddNewEmployeeData;
 import com.orasi.bluesource.dataObject.TestAddNewTitleData;
 import com.orasi.bluesource.dataObject.TestEnterTimeOffDetailsData;

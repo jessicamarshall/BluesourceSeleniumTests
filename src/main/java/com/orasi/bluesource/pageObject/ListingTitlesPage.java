@@ -10,40 +10,58 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.orasi.bluesource.interfaces.Button;
+import com.orasi.bluesource.interfaces.Label;
+import com.orasi.bluesource.interfaces.Link;
+import com.orasi.bluesource.interfaces.Listbox;
+import com.orasi.bluesource.interfaces.Textbox;
+import com.orasi.bluesource.interfaces.impl.internal.ElementFactory;
 
 public class ListingTitlesPage {
 	
-	WebDriver driver;
+	private static WebDriver driver;
 	
 	//All the page elements
 	@FindBy(linkText = "New Title")
-	WebElement newTitleLink;
+	static
+	private Link lnkNewTitle;
 	
 	@FindBy(xpath = "//h1[text() = 'Listing titles']")
-	WebElement titleHeader;
+	private Label lblTitle;
 
 	@FindBy(css = ".alert-success.alert-dismissable")
-	WebElement successMessage;
+	private Label lblSuccessMsg;
 	
-	//constructor
+	//Constructor
 	public ListingTitlesPage(WebDriver driver){
-		this.driver = driver;
+		ListingTitlesPage.driver = driver;
+		ElementFactory.initElements(driver, this); 
 	}
+	
+	private static void listingTitlesPageLoaded(){
+		  while (lnkNewTitle==null){
+		      initialize(driver);
+		     }
+	}
+	
+	private static ListingTitlesPage initialize(WebDriver driver) {
+	     return ElementFactory.initElements(driver, ListingTitlesPage.class);         
+	 }
 	
 	//Methods
 	public void ClickNewTitle(){
-		newTitleLink.click();
+		lnkNewTitle.click();
 	}
 	
 	public boolean isTitleHeaderDisplayed(){
-		return titleHeader.isDisplayed();
+		return lblTitle.isDisplayed();
 	}
 	
 	public boolean isSuccessMsgDisplayed() {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".alert-success.alert-dismissable")));
 		//wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".alert-success.alert-dismissable")));
-		return successMessage.isDisplayed();
+		return lblSuccessMsg.isDisplayed();
 	}
 	
 	public boolean SearchTableByTitle(String title){

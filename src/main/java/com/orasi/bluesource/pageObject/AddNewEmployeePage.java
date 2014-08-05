@@ -2,67 +2,83 @@ package com.orasi.bluesource.pageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
+
+import com.orasi.bluesource.interfaces.Button;
+import com.orasi.bluesource.interfaces.Listbox;
+import com.orasi.bluesource.interfaces.Textbox;
+import com.orasi.bluesource.interfaces.impl.internal.ElementFactory;
+
+
 
 
 public class AddNewEmployeePage {
 
-	WebDriver driver;
-	public static StringBuffer verificationErrors = new StringBuffer();
-	
+	private static WebDriver driver;
+	private static StringBuffer verificationErrors = new StringBuffer();
+
 	//All the page elements:
 	@FindBy(id = "employee_username")
-	WebElement usernameField;
+	static
+	private Textbox txtUsername;
 	
 	@FindBy(id = "employee_first_name")
-	WebElement firstnameField;
+	private Textbox txtFirstName;
 	
 	@FindBy(id = "employee_last_name")
-	WebElement lastnameField;
+	private Textbox txtLastName;
 	
 	@FindBy(id = "employee_title_id")
-	WebElement titleSelect;
+	private Listbox lstTitle;
 	
 	@FindBy(id = "employee_role")
-	WebElement roleSelect;
+	private Listbox lstRole;
 	
 	@FindBy(id = "employee_manager_id")
-	WebElement managerSelect;
+	private Listbox lstManager;
 	
 	@FindBy(id = "employee_status")
-	WebElement statusSelect;
+	private Listbox lstStatus;
 	
 	@FindBy(id = "employee_location")
-	WebElement locationSelect;
+	private Listbox lstLocation;
 	
 	@FindBy(id = "employee_start_date")
-	WebElement startdateField;
+	private Textbox txtStartDate;
 	
 	@FindBy(id = "employee_cell_phone")
-	WebElement cellphoneField;
+	private Textbox txtCellPhone;
 	
 	@FindBy(id = "employee_office_phone")
-	WebElement officephoneField;
+	private Textbox txtOfficePhone;
 	
 	@FindBy(id = "employee_email")
-	WebElement emailField;
+	private Textbox txtEmail;
 	
 	@FindBy(id = "employee_department_id")
-	WebElement deptSelect;
+	private Listbox lstDept;
 	
 	@FindBy(name = "commit")
-	WebElement createEmpButton;
+	private Button btnCreateEmp;
 
 	//Constructor
 	public AddNewEmployeePage(WebDriver driver){
-		this.driver = driver;
+		AddNewEmployeePage.driver = driver;
+		ElementFactory.initElements(driver, this); 
 	}
 	
+	private static void addNewEmployeePageLoaded(){
+		  while (txtUsername==null){
+		      initialize(driver);
+		     }
+	}
+	
+	private static AddNewEmployeePage initialize(WebDriver driver) {
+	     return ElementFactory.initElements(driver, AddNewEmployeePage.class);         
+	 }
 
 	//adds a new employee on the new employee page
 	public void addEmployee(String username, String firstName, String lastName, String title, String role, String manager,
@@ -72,35 +88,29 @@ public class AddNewEmployeePage {
 
 		  //variables	
 		  WebDriverWait wait = new WebDriverWait(driver, 60);
-		  Select select;
 
 		  //wait until page loads
 		  wait.until(ExpectedConditions.elementToBeClickable(By.id("employee_username")));
 
 		  //Fill in the details
 		  try {
-			  usernameField.sendKeys(username);
-			  firstnameField.sendKeys(firstName);
-			  lastnameField.sendKeys(lastName);
-			  select = new Select(titleSelect);
-			  select.selectByVisibleText(title);
-			  select = new Select(roleSelect);
-			  select.selectByVisibleText(role);
-			  select = new Select(managerSelect);
-			  select.selectByVisibleText(manager);
-			  select = new Select(statusSelect);
-			  select.selectByVisibleText(status);
-			  select = new Select(locationSelect);
-			  select.selectByVisibleText(location);
-			  startdateField.sendKeys(startDate);
-			  cellphoneField.sendKeys(cellPhone);
-			  officephoneField.sendKeys(officePhone);
-			  emailField.sendKeys(email);
-			  select = new Select(deptSelect);
-			  select.selectByVisibleText(dept);
+			  txtUsername.safeSet(username);
+			  txtUsername.safeSet(username);
+			  txtFirstName.safeSet(firstName);
+			  txtLastName.safeSet(lastName);
+			  lstTitle.select(title);
+			  lstRole.select(role);
+			  lstManager.select(manager);
+			  lstStatus.select(status);
+			  lstLocation.select(location);
+			  txtStartDate.safeSet(startDate);
+			  txtCellPhone.safeSet(cellPhone);
+			  txtOfficePhone.safeSet(officePhone);
+			  txtEmail.safeSet(email);
+			  lstDept.select(dept);
 		  
 			  //submit
-			  createEmpButton.click();
+			  btnCreateEmp.click();
 			  
 		  }catch (Exception e){
 			  verificationErrors.append(e.toString());

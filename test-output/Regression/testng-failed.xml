@@ -7,9 +7,9 @@
     <classes>
       <class name="com.orasi.bluesource.test.TestAddNewTitle">
         <methods>
+          <include name="catchExceptions"/>
           <include name="launchBrowser"/>
           <include name="cleanUp"/>
-          <include name="catchExceptions"/>
           <include name="testCreateNewTitle" invocation-numbers="0"/>
         </methods>
       </class> <!-- com.orasi.bluesource.test.TestAddNewTitle -->

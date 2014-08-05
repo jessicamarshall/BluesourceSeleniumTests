@@ -9,28 +9,46 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
+import com.orasi.bluesource.interfaces.Button;
+import com.orasi.bluesource.interfaces.Link;
+import com.orasi.bluesource.interfaces.Listbox;
+import com.orasi.bluesource.interfaces.Textbox;
+import com.orasi.bluesource.interfaces.impl.internal.ElementFactory;
+
 public class EmployeeSummaryPage {
-	WebDriver driver;
+	static WebDriver driver;
 	
 	//All the page elements
 	@FindBy(xpath = "//*[@id='accordion']/div/div[6]/div[1]/a[2]")
-	WebElement manageTimeOffButton;
+	private Link lnkManageTimeOff;
 	
 	@FindBy(linkText = "View")
-	WebElement viewTimeOffButton;
+	static
+	private Link lnkViewTimeOff;
 	
 	//Constructor
 	public EmployeeSummaryPage(WebDriver driver){
-		this.driver = driver;
+		EmployeeSummaryPage.driver = driver;
+		ElementFactory.initElements(driver, this); 
 	}
+	
+	private static void employeeSummaryPageeLoaded(){
+		  while (lnkViewTimeOff==null){
+		      initialize(driver);
+		     }
+	}
+	
+	private static EmployeeSummaryPage initialize(WebDriver driver) {
+	     return ElementFactory.initElements(driver, EmployeeSummaryPage.class);         
+	 }
 	
 	//Methods:
 	public void ClickManageTimeOff(){
-		manageTimeOffButton.click();
+		lnkManageTimeOff.click();
 	}
 	
 	public void ViewManageTimeOff(){
-		viewTimeOffButton.click();
+		lnkViewTimeOff.click();
 	}
 	
 	
